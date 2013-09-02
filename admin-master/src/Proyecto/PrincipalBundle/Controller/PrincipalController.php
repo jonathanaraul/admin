@@ -12,13 +12,34 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Proyecto\PrincipalBundle\Entity\Seguros;
-use Proyecto\PrincipalBundle\Entity\Responsable;
+use Proyecto\PrincipalBundle\Entity\Reponsable;
 use Proyecto\PrincipalBundle\Entity\Direccion;
-
+use Proyecto\PrincipalBundle\Entity\Bienes;
+use Proyecto\PrincipalBundle\Entity\Coordinacion;
+use Proyecto\PrincipalBundle\Entity\Faltantes;
 
 class PrincipalController extends Controller
 {
 	 public function portadaAction(){
+
+	 	$coordinacion = new Coordinacion();
+
+	 			
+	 			$faltantes = new Faltantes();
+	 			$faltantes->setCodCord(234567);
+
+	 			$coordinacion = new Coordinacion();
+	 			$coordinacion->setNombre('$nombre_seguro');
+				$coordinacion->setCoordinador('$poliza_seguro');
+				$coordinacion->setCodCord(234567);
+				$coordinacion->setFaltantes($faltantes);
+
+				$product->setCategory($category);
+
+				$em = $this->getDoctrine()->getManager();
+			    $em->persist($coordinacion);
+			     $em->persist($faltantes);
+			    $em->flush();
 
 	 	return $this->render('ProyectoPrincipalBundle:Principal:portada.html.twig', array());
 	 }
@@ -67,10 +88,10 @@ class PrincipalController extends Controller
 
 			case 'responsable':
 
-				$responsable = new Responsable();
+				$responsable = new Reponsable();
 
 ///////////////////////////Captura de variables
-				$nombre_responsable 			  = $post -> get("nombre_cargo");
+				$nombre_responsable 			  = $post -> get("nombre_responsable");
 				$cedula_responsable    			  = $post -> get("cedula_responsable");
 				$descripcion_cargo_responsable    = $post -> get("descripcion_cargo_responsable");
 
@@ -80,12 +101,14 @@ class PrincipalController extends Controller
 				$responsable->setNombre($nombre_responsable);
 				$responsable->setCi($cedula_responsable);
 				$responsable->setDescrCargo($descripcion_cargo_responsable);
+				$responsable->setCodRspn(3232);
 
 
 				$em = $this->getDoctrine()->getManager();
 			    $em->persist($responsable);
 			    $em->flush();
 
+			    break;
 			case 'direccion':
 				
 				$direccion = new Direccion();
@@ -105,6 +128,9 @@ class PrincipalController extends Controller
 
 				break;
 			
+			case 'coordinacion':
+				// 
+				break;
 			default:
 				// 
 				break;

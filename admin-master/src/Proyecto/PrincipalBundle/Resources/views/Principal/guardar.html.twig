@@ -34,12 +34,23 @@
 
 		Nombre de responsable:<input type='text' id='nombre_responsable'><br>
 		Cedula Responsable:<input type='text' id='cedula_responsable'><br>
-						   <input type='text' id='descripcion_cargo_responsable'><br>
-						   <input type='hidden' id='input_responsable_guardar' value='responsale'>
+		Descripcion Cargo:<input type='text' id='descripcion_cargo_responsable'><br>
+						   <input type='hidden' id='input_responsable_guardar' value='responsable'>
 
 		<input class='boton_enviar_guardar_responsable' type='button' value='Enviar'>
 		
 	</form>
+{% endif %}
+
+{% if slug == 'coordinacion' %}
+
+		Nombre de Coordinacion:<input type='text' id='nombre_coordinacion'><br>
+		Nombre de Coordinador(a):<input type='text' id='nombre_coordinador'><br>
+		Codigo de Coordinacion:<input type='text' id='codigo_coordinacion'><br>
+						   <input type='hidden' id='input_coordinacion_guardar' value='coordinacion'>
+
+		<input class='boton_enviar_guardar_coordinacion' type='button' value='Enviar'>
+
 {% endif %}
 
 	<a href="{{ path('portada') }}">Volver</a>

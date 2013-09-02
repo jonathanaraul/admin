@@ -96,3 +96,29 @@ $('.boton_enviar_guardar_direccion').live("click", function() {
 	};
 
 });
+
+$('.boton_enviar_guardar_coordinacion').live("click", function() {
+
+	if ($('#input_coordinacion_guardar')) {
+
+		var modulo = 'coordinacion';
+
+		var nombre_coordinacion 		= $('#nombre_coordinacion').val();
+		var nombre_coordinador 			= $('#nombre_coordinador').val();
+		var codigo_coordinacion 		= $('#codigo_coordinacion').val();
+
+		$.ajax({
+		type : "POST",
+		url : guardar,
+		data : data,
+		dataType : "json",
+		success : function(data) {
+		
+			// console.log(data.variable);
+	 	
+		}
+		});
+
+	};
+
+});
