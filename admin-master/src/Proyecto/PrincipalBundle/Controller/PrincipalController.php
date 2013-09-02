@@ -22,9 +22,6 @@ class PrincipalController extends Controller
 {
 	 public function portadaAction(){
 
-	 	$coordinacion = new Coordinacion();
-
-	 			
 	 			$faltantes = new Faltantes();
 	 			$faltantes->setCodCord(234567);
 
