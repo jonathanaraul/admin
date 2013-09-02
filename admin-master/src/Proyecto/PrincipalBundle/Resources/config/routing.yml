@@ -1,0 +1,9 @@
+portada:
+    pattern:  /portada/
+    defaults: { _controller: ProyectoPrincipalBundle:Principal:portada }
+guardar:
+    pattern:  /guardar/{slug}
+    defaults: { _controller: ProyectoPrincipalBundle:Principal:guardar, slug:'' }
+guardarAjax:
+    pattern:  /guardarAjax/
+    defaults: { _controller: ProyectoPrincipalBundle:Principal:guardarAjax }

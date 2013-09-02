@@ -1,0 +1,128 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Faltantes
+ *
+ * @ORM\Table(name="faltantes")
+ * @ORM\Entity
+ */
+class Faltantes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="grupo", type="string", length=255, nullable=false)
+     */
+    private $grupo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subgrupo", type="string", length=255, nullable=false)
+     */
+    private $subgrupo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seccion", type="string", length=255, nullable=false)
+     */
+    private $seccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=255, nullable=false)
+     */
+    private $descripcion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cantidad", type="integer", nullable=false)
+     */
+    private $cantidad;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="valor_uni", type="integer", nullable=false)
+     */
+    private $valorUni;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="diferencia", type="integer", nullable=false)
+     */
+    private $diferencia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="obsrvc", type="string", length=255, nullable=false)
+     */
+    private $obsrvc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cod_falt", type="integer", nullable=false)
+     */
+    private $codFalt;
+
+    /**
+     * @var \Municipio
+     *
+     * @ORM\ManyToOne(targetEntity="Municipio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     * })
+     */
+    private $codMuni;
+
+    /**
+     * @var \Estado
+     *
+     * @ORM\ManyToOne(targetEntity="Estado")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     * })
+     */
+    private $codEstd;
+
+    /**
+     * @var \Coordinacion
+     *
+     * @ORM\ManyToOne(targetEntity="Coordinacion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     * })
+     */
+    private $codCord;
+
+    /**
+     * @var \Direccion
+     *
+     * @ORM\ManyToOne(targetEntity="Direccion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     * })
+     */
+    private $codDirc;
+
+
+}

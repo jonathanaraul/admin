@@ -1,0 +1,55 @@
+{% extends "ProyectoPrincipalBundle:Principal:base.html.twig" %}
+
+{%block contenido%}
+
+{% if slug == 'seguros' %}
+	<form id='formulario_seguro'>
+
+		Nombre del Seguro:<input type='text' id='nombre_seguro'>    <br>
+		Poliza del Seguro:<input type='text' id='poliza_seguro'>    <br>
+		Vigencia desde:   <input type='text' id='vig_desde_seguro'> <br>
+		Vigencia hasta:   <input type='text' id='vig_hasta_seguro'> <br>
+		Codigo de Seguro: <input type='text' id='codigo_seguro'>    <br>
+						  <input type='hidden' id='input_seguros_guardar' value='seguros'>
+
+		<input class ='boton_enviar_guardar_seguros' type='button' value='Enviar'>
+	</form>
+{% endif %}
+
+{% if slug == 'direccion' %}
+	<form id='formulario_direccion'>
+
+		Nombre de direccion:<input type='text' id='nombre_direccion'><br>
+		Nombre de Director(a):<input type='text' id='nombre_director'><br>
+		Codigo de Direccion:<input type='text' id='codigo_direccion'><br>
+		<input type='hidden' id='input_direccion_guardar' value='direccion'>
+
+		<input class='boton_enviar_guardar_direccion' type='button' value='Enviar'>
+
+	</form>
+{% endif %}
+
+{% if slug == 'responsable' %}
+	<form id='formulario_responsable'>
+
+		Nombre de responsable:<input type='text' id='nombre_responsable'><br>
+		Cedula Responsable:<input type='text' id='cedula_responsable'><br>
+						   <input type='text' id='descripcion_cargo_responsable'><br>
+						   <input type='hidden' id='input_responsable_guardar' value='responsale'>
+
+		<input class='boton_enviar_guardar_responsable' type='button' value='Enviar'>
+		
+	</form>
+{% endif %}
+
+	<a href="{{ path('portada') }}">Volver</a>
+
+{%endblock%}
+							
+{%block alertanormal%}
+{%endblock%}
+							
+
+{%block alertaespecial%}
+{%endblock%}
+

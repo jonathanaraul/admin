@@ -1,0 +1,53 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Reponsable
+ *
+ * @ORM\Table(name="reponsable")
+ * @ORM\Entity
+ */
+class Reponsable
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ci", type="string", length=25, nullable=false)
+     */
+    private $ci;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cod_rspn", type="integer", nullable=true)
+     */
+    private $codRspn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descr_cargo", type="string", length=30, nullable=false)
+     */
+    private $descrCargo;
+
+
+}

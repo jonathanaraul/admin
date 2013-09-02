@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ResumenCuentas" table="resumen_cuentas">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="codRcta" type="integer" column="cod_rcta" nullable="false"/>
+    <many-to-one field="codMuni" target-entity="Municipio">
+      <join-columns>
+        <join-column name="cod_muni" referenced-column-name="cod_muni"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codEstd" target-entity="Estado">
+      <join-columns>
+        <join-column name="cod_estd" referenced-column-name="cod_estd"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

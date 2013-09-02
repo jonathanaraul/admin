@@ -1,0 +1,49 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Coordinacion
+ *
+ * @ORM\Table(name="coordinacion")
+ * @ORM\Entity
+ */
+class Coordinacion
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coordinador", type="string", length=255, nullable=false)
+     */
+    private $coordinador;
+
+    /**
+     * @var \Faltantes
+     *
+     * @ORM\ManyToOne(targetEntity="Faltantes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     * })
+     */
+    private $codCord;
+
+
+}

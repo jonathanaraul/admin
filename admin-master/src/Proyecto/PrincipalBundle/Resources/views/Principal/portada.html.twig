@@ -1,0 +1,73 @@
+{% extends "ProyectoPrincipalBundle:Principal:base.html.twig" %}
+
+{%block scripts%}
+{%endblock%} 
+
+{%block alertanormal%}
+{%endblock%} 
+
+{%block contenido%}
+
+
+ <ul class = 'lista-portada'>
+
+	<li>
+		Bienes
+			<ul>
+				<li><a >Aregar</a></li>
+				<li>Listar</li>
+			</ul>
+	</li>	 
+	<li>
+		Coordinación
+			<ul>
+				<li>Agregar</li>
+				<li>Listar</li>
+			</ul>
+	</li>
+	<li>
+		Dirección
+			<ul>
+				<li><a href="{{ path('guardar', {'slug': 'direccion'}) }}" class ='agregar_direccion'>Aregar</a></li>
+				<li>Listar</li>
+			</ul>
+	</li>
+	<li>
+		Faltantes
+			<ul>
+				<li>Agregar</li>
+				<li>Listar</li>
+			</ul>
+	</li>
+	<li>
+		Movimientos
+			<ul>
+				<li>Agregar</li>
+				<li>Listar</li>
+			</ul>
+	</li>
+	<li>
+		Responsable
+			<ul>
+				<li><a href="{{ path('guardar', {'slug': 'responsable'}) }}" class ='agregar_responsable'>Agregar</a></li>
+				<li>Listar</li>
+			</ul>
+	</li>
+	<li>
+		Resumen de cuentas
+			<ul>
+				<li>Agregar</li>
+				<li>Listar</li>
+			</ul>
+	</li>
+	<li>
+		<p class='tip_letra'>Seguros</p>
+			<ul>
+				<li><a href="{{ path('guardar', {'slug': 'seguros'}) }}" class ='agregar_seguros'>Aregar</a></li>
+				<li><a href="#">Listar</a></li>
+			</ul>
+	</li>
+
+
+</ul> 
+{%endblock%} 

@@ -1,0 +1,46 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Direccion
+ *
+ * @ORM\Table(name="direccion")
+ * @ORM\Entity
+ */
+class Direccion
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="director", type="string", length=255, nullable=false)
+     */
+    private $director;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cod_dirc", type="integer", nullable=false)
+     */
+    private $codDirc;
+
+
+}

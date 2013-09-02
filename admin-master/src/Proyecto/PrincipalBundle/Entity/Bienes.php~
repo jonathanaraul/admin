@@ -1,0 +1,381 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Bienes
+ *
+ * @ORM\Table(name="bienes")
+ * @ORM\Entity
+ */
+class Bienes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_adqui", type="datetime", nullable=true)
+     */
+    private $fechaAdqui;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="num_corr_inv", type="decimal", nullable=true)
+     */
+    private $numCorrInv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="serial", type="string", length=40, nullable=true)
+     */
+    private $serial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="placa", type="string", length=255, nullable=true)
+     */
+    private $placa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="n_ord_compra", type="integer", nullable=true)
+     */
+    private $nOrdCompra;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="f_ord_compra", type="datetime", nullable=true)
+     */
+    private $fOrdCompra;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="np_ord_compra", type="string", length=255, nullable=true)
+     */
+    private $npOrdCompra;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nfac_ord_compr", type="integer", nullable=true)
+     */
+    private $nfacOrdCompr;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ffac_ord_compr", type="datetime", nullable=true)
+     */
+    private $ffacOrdCompr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="em_ord_compr", type="string", length=255, nullable=true)
+     */
+    private $emOrdCompr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imnmu_o_compr", type="string", length=255, nullable=true)
+     */
+    private $imnmuOCompr;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fadq_o_compr", type="datetime", nullable=true)
+     */
+    private $fadqOCompr;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ncor_o_compr", type="integer", nullable=true)
+     */
+    private $ncorOCompr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ci_n_o_compr", type="string", length=255, nullable=true)
+     */
+    private $ciNOCompr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rif_n_o_comp", type="string", length=255, nullable=true)
+     */
+    private $rifNOComp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ubc_o_compr", type="string", length=255, nullable=true)
+     */
+    private $ubcOCompr;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="num_ord_pag", type="integer", nullable=true)
+     */
+    private $numOrdPag;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fech_ord_pag", type="datetime", nullable=true)
+     */
+    private $fechOrdPag;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prad_ord_pag", type="integer", nullable=true)
+     */
+    private $pradOrdPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tbn_ord_pag", type="string", length=255, nullable=true)
+     */
+    private $tbnOrdPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dis_ord_com", type="string", length=255, nullable=true)
+     */
+    private $disOrdCom;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="frm_ord_pag", type="datetime", nullable=true)
+     */
+    private $frmOrdPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="drm_ord_pag", type="string", length=255, nullable=true)
+     */
+    private $drmOrdPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ofc_dr_o_pag", type="string", length=255, nullable=true)
+     */
+    private $ofcDrOPag;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="n_dr_o_pag", type="integer", nullable=true)
+     */
+    private $nDrOPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="t_dr_o_pag", type="string", length=255, nullable=true)
+     */
+    private $tDrOPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="f_dr_o_pag", type="string", length=255, nullable=true)
+     */
+    private $fDrOPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="p_dr_o_pag", type="string", length=255, nullable=true)
+     */
+    private $pDrOPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tr_dr_o_pag", type="string", length=255, nullable=true)
+     */
+    private $trDrOPag;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fch_dr_o_pag", type="datetime", nullable=true)
+     */
+    private $fchDrOPag;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fch_ac_o_pag", type="datetime", nullable=true)
+     */
+    private $fchAcOPag;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mnt_ac_o_pag", type="integer", nullable=true)
+     */
+    private $mntAcOPag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_marc", type="string", length=255, nullable=true)
+     */
+    private $nombreMarc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mod_tip_anio", type="string", length=255, nullable=true)
+     */
+    private $modTipAnio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=255, nullable=true)
+     */
+    private $color;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_mat", type="string", length=255, nullable=true)
+     */
+    private $nombreMat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cod_seg", type="integer", nullable=true)
+     */
+    private $codSeg;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cod_bien", type="integer", nullable=true)
+     */
+    private $codBien;
+
+    /**
+     * @var \Direccion
+     *
+     * @ORM\ManyToOne(targetEntity="Direccion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     * })
+     */
+    private $codDirc;
+
+    /**
+     * @var \Coordinacion
+     *
+     * @ORM\ManyToOne(targetEntity="Coordinacion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     * })
+     */
+    private $codCord;
+
+    /**
+     * @var \Reponsable
+     *
+     * @ORM\ManyToOne(targetEntity="Reponsable")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_rspn", referencedColumnName="cod_rspn")
+     * })
+     */
+    private $codRspn;
+
+    /**
+     * @var \Movimientos
+     *
+     * @ORM\ManyToOne(targetEntity="Movimientos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_mvts", referencedColumnName="cod_mvts")
+     * })
+     */
+    private $codMvts;
+
+    /**
+     * @var \Municipio
+     *
+     * @ORM\ManyToOne(targetEntity="Municipio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     * })
+     */
+    private $codMuni;
+
+    /**
+     * @var \Estado
+     *
+     * @ORM\ManyToOne(targetEntity="Estado")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     * })
+     */
+    private $codEstd;
+
+    /**
+     * @var \TiposBienes
+     *
+     * @ORM\ManyToOne(targetEntity="TiposBienes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_tbien", referencedColumnName="cod_tbien")
+     * })
+     */
+    private $codTbien;
+
+    /**
+     * @var \ResumenCuentas
+     *
+     * @ORM\ManyToOne(targetEntity="ResumenCuentas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_rcta", referencedColumnName="cod_rcta")
+     * })
+     */
+    private $codRcta;
+
+    /**
+     * @var \Faltantes
+     *
+     * @ORM\ManyToOne(targetEntity="Faltantes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_falt", referencedColumnName="cod_falt")
+     * })
+     */
+    private $codFalt;
+
+
+}

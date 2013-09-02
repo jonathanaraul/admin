@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Bienes" table="bienes">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fechaAdqui" type="datetime" column="fecha_adqui" nullable="true"/>
+    <field name="numCorrInv" type="decimal" column="num_corr_inv" nullable="true"/>
+    <field name="serial" type="string" column="serial" length="40" nullable="true"/>
+    <field name="placa" type="string" column="placa" length="255" nullable="true"/>
+    <field name="nOrdCompra" type="integer" column="n_ord_compra" nullable="true"/>
+    <field name="fOrdCompra" type="datetime" column="f_ord_compra" nullable="true"/>
+    <field name="npOrdCompra" type="string" column="np_ord_compra" length="255" nullable="true"/>
+    <field name="nfacOrdCompr" type="integer" column="nfac_ord_compr" nullable="true"/>
+    <field name="ffacOrdCompr" type="datetime" column="ffac_ord_compr" nullable="true"/>
+    <field name="emOrdCompr" type="string" column="em_ord_compr" length="255" nullable="true"/>
+    <field name="imnmuOCompr" type="string" column="imnmu_o_compr" length="255" nullable="true"/>
+    <field name="fadqOCompr" type="datetime" column="fadq_o_compr" nullable="true"/>
+    <field name="ncorOCompr" type="integer" column="ncor_o_compr" nullable="true"/>
+    <field name="ciNOCompr" type="string" column="ci_n_o_compr" length="255" nullable="true"/>
+    <field name="rifNOComp" type="string" column="rif_n_o_comp" length="255" nullable="true"/>
+    <field name="ubcOCompr" type="string" column="ubc_o_compr" length="255" nullable="true"/>
+    <field name="numOrdPag" type="integer" column="num_ord_pag" nullable="true"/>
+    <field name="fechOrdPag" type="datetime" column="fech_ord_pag" nullable="true"/>
+    <field name="pradOrdPag" type="integer" column="prad_ord_pag" nullable="true"/>
+    <field name="tbnOrdPag" type="string" column="tbn_ord_pag" length="255" nullable="true"/>
+    <field name="disOrdCom" type="string" column="dis_ord_com" length="255" nullable="true"/>
+    <field name="frmOrdPag" type="datetime" column="frm_ord_pag" nullable="true"/>
+    <field name="drmOrdPag" type="string" column="drm_ord_pag" length="255" nullable="true"/>
+    <field name="ofcDrOPag" type="string" column="ofc_dr_o_pag" length="255" nullable="true"/>
+    <field name="nDrOPag" type="integer" column="n_dr_o_pag" nullable="true"/>
+    <field name="tDrOPag" type="string" column="t_dr_o_pag" length="255" nullable="true"/>
+    <field name="fDrOPag" type="string" column="f_dr_o_pag" length="255" nullable="true"/>
+    <field name="pDrOPag" type="string" column="p_dr_o_pag" length="255" nullable="true"/>
+    <field name="trDrOPag" type="string" column="tr_dr_o_pag" length="255" nullable="true"/>
+    <field name="fchDrOPag" type="datetime" column="fch_dr_o_pag" nullable="true"/>
+    <field name="fchAcOPag" type="datetime" column="fch_ac_o_pag" nullable="true"/>
+    <field name="mntAcOPag" type="integer" column="mnt_ac_o_pag" nullable="true"/>
+    <field name="nombreMarc" type="string" column="nombre_marc" length="255" nullable="true"/>
+    <field name="modTipAnio" type="string" column="mod_tip_anio" length="255" nullable="true"/>
+    <field name="color" type="string" column="color" length="255" nullable="true"/>
+    <field name="nombreMat" type="string" column="nombre_mat" length="255" nullable="true"/>
+    <field name="codSeg" type="integer" column="cod_seg" nullable="true"/>
+    <field name="codBien" type="integer" column="cod_bien" nullable="true"/>
+    <many-to-one field="codTbien" target-entity="TiposBienes">
+      <join-columns>
+        <join-column name="cod_tbien" referenced-column-name="cod_tbien"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codRcta" target-entity="ResumenCuentas">
+      <join-columns>
+        <join-column name="cod_rcta" referenced-column-name="cod_rcta"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codFalt" target-entity="Faltantes">
+      <join-columns>
+        <join-column name="cod_falt" referenced-column-name="cod_falt"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codEstd" target-entity="Estado">
+      <join-columns>
+        <join-column name="cod_estd" referenced-column-name="cod_estd"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codMuni" target-entity="Municipio">
+      <join-columns>
+        <join-column name="cod_muni" referenced-column-name="cod_muni"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codCord" target-entity="Coordinacion">
+      <join-columns>
+        <join-column name="cod_cord" referenced-column-name="cod_cord"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codRspn" target-entity="Reponsable">
+      <join-columns>
+        <join-column name="cod_rspn" referenced-column-name="cod_rspn"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codMvts" target-entity="Movimientos">
+      <join-columns>
+        <join-column name="cod_mvts" referenced-column-name="cod_mvts"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codDirc" target-entity="Direccion">
+      <join-columns>
+        <join-column name="cod_dirc" referenced-column-name="cod_dirc"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

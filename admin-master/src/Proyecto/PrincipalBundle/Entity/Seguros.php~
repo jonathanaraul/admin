@@ -1,0 +1,60 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Seguros
+ *
+ * @ORM\Table(name="seguros")
+ * @ORM\Entity
+ */
+class Seguros
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poliza", type="string", length=50, nullable=false)
+     */
+    private $poliza;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="vig_desde", type="date", nullable=false)
+     */
+    private $vigDesde;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="vig_hasta", type="date", nullable=false)
+     */
+    private $vigHasta;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cod_seg", type="integer", nullable=false)
+     */
+    private $codSeg;
+
+
+}

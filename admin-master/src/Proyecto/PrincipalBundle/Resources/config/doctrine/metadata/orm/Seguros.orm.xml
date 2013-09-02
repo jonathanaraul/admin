@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Seguros" table="seguros">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="100" nullable="false"/>
+    <field name="poliza" type="string" column="poliza" length="50" nullable="false"/>
+    <field name="vigDesde" type="date" column="vig_desde" nullable="false"/>
+    <field name="vigHasta" type="date" column="vig_hasta" nullable="false"/>
+    <field name="codSeg" type="integer" column="cod_seg" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,27 @@
+<li >
+	<a href="{{path('proyecto_principal_modulo_nuevo')}}"> <i class="icon-cog"></i> <span class="menu-text"> Nuevo </span> </a>
+</li>
+<li>
+	<a href="{{path('proyecto_principal_modulo_editar')}}"> <i class="icon-edit"></i> <span class="menu-text"> Editar </span> </a>
+</li>
+<li >
+	<a href="#"> <i class="icon-trash"></i> <span class="menu-text"> Eliminar </span> </a>
+</li>
+
+<li {%if parametros.seccion == 'Acceso' or parametros.seccion == 'Registro' or parametros.seccion == 'Mi Perfil' %}class="active open"{%endif%}>
+	<a href="#" > <i class="icon-lock"></i> <span class="menu-text"> Usuarios </span> <b class="arrow icon-angle-down"></b> </a>
+	<ul class="submenu" style="display: block;">
+		<li {%if parametros.seccion == 'Acceso' %}class="active"{%endif%}>
+			<a href="{{ path('proyecto_principal_acceso') }}"> <i class="icon-double-angle-right"></i> Acceso </a>
+		</li>
+		<li {%if parametros.seccion == 'Registro' %}class="active"{%endif%}>
+			<a href="{{ path('proyecto_principal_registro') }}"> <i class="icon-double-angle-right"></i> Registro </a>
+		</li>
+		<li {%if parametros.seccion == 'Mi Perfil' %}class="active"{%endif%}>
+			<a href="{{ path('proyecto_principal_modulo_perfil') }}"> <i class="icon-double-angle-right"></i> Mi Perfil </a>
+		</li>
+	</ul>
+</li>
+<li>
+	<a href="#"> <i class="icon-book"></i> <span class="menu-text"> Acerca de... </span> </a>
+</li>
