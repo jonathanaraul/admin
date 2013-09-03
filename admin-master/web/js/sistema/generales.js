@@ -107,6 +107,8 @@ $('.boton_enviar_guardar_coordinacion').live("click", function() {
 		var nombre_coordinador 			= $('#nombre_coordinador').val();
 		var codigo_coordinacion 		= $('#codigo_coordinacion').val();
 
+		var data = 'modulo='+modulo+'&nombre_coordinacion='+nombre_coordinacion+'&nombre_coordinador='+nombre_coordinador+'&codigo_coordinacion='+codigo_coordinacion;
+
 		$.ajax({
 		type : "POST",
 		url : guardar,

@@ -36,12 +36,9 @@ class Coordinacion
     private $coordinador;
 
     /**
-     * @var \Faltantes
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Faltantes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
-     * })
+     * @ORM\Column(name="cod_cord", type="integer", nullable=false)
      */
     private $codCord;
 

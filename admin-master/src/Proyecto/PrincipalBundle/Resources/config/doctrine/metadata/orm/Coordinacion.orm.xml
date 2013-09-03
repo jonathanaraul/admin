@@ -6,10 +6,6 @@
     </id>
     <field name="nombre" type="string" column="nombre" length="255" nullable="false"/>
     <field name="coordinador" type="string" column="coordinador" length="255" nullable="false"/>
-    <many-to-one field="codCord" target-entity="Faltantes">
-      <join-columns>
-        <join-column name="cod_cord" referenced-column-name="cod_cord"/>
-      </join-columns>
-    </many-to-one>
+    <field name="codCord" type="integer" column="cod_cord" nullable="false"/>
   </entity>
 </doctrine-mapping>

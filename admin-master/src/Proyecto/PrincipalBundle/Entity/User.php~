@@ -1,0 +1,95 @@
+<?php
+
+namespace Proyecto\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="user")
+ * @ORM\Entity
+ */
+class User
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=60, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=60, nullable=false)
+     */
+    private $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=25, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salt", type="string", length=80, nullable=false)
+     */
+    private $salt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=80, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=60, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sexo", type="boolean", nullable=false)
+     */
+    private $sexo;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_active", type="boolean", nullable=false)
+     */
+    private $isActive;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     */
+    private $path;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text", nullable=false)
+     */
+    private $descripcion;
+
+
+}

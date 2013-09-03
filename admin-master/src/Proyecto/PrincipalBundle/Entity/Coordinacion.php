@@ -36,12 +36,9 @@ class Coordinacion
     private $coordinador;
 
     /**
-     * @var \Faltantes
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Faltantes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
-     * })
+     * @ORM\Column(name="cod_cord", type="integer", nullable=false)
      */
     private $codCord;
 
@@ -106,10 +103,10 @@ class Coordinacion
     /**
      * Set codCord
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Faltantes $codCord
+     * @param integer $codCord
      * @return Coordinacion
      */
-    public function setCodCord(\Proyecto\PrincipalBundle\Entity\Faltantes $codCord = null)
+    public function setCodCord($codCord)
     {
         $this->codCord = $codCord;
     
@@ -119,7 +116,7 @@ class Coordinacion
     /**
      * Get codCord
      *
-     * @return \Proyecto\PrincipalBundle\Entity\Faltantes 
+     * @return integer 
      */
     public function getCodCord()
     {
