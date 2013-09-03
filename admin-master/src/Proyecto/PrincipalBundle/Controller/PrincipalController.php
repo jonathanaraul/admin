@@ -31,7 +31,7 @@ class PrincipalController extends Controller
 				$coordinacion->setCodCord(234567);
 				$coordinacion->setFaltantes($faltantes);
 
-				//$product->setCategory($category);
+				$coordinacion->setFaltantes($category);
 				// No tienes la clase producto
 
 				$em = $this->getDoctrine()->getManager();
