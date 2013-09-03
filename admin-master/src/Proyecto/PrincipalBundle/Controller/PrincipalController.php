@@ -24,6 +24,34 @@ use Proyecto\PrincipalBundle\Entity\Movimientos;
 class PrincipalController extends Controller
 {
 	 public function portadaAction(){
+	 	
+	 	$em = $this->getDoctrine()->getManager();
+
+
+		$municipio = new Municipio();
+	 	$municipio->setCodMuni(33);
+	 	$municipio->setNombre('Nombremunicipio');
+
+	 	$estado = new Estado();
+	 	$estado->setCodEstd(4343);
+	 	$municipio->setNombre('Nombreestado');
+
+	 	$coordinacion = new Coordinacion();
+	 	$coordinacion->setCodCord(134);
+	 	$coordinacion->setCoordinador('nombrecordinador')
+
+	 	$direccion = new Direccion();
+	 	$direccion->setCodDirc(23323);
+	 	$direccion->setDirector('nombredirector');
+	 	$direccion->setNombre('Nomre');
+	 	
+	 		 
+	 	$em->persist($municipio);
+	 	$em->persist($estado);
+	 	$em->persist($coordinacion);
+	 	$em->persist($direccion);
+		
+		$em->flush();
 
 	 	$faltantes = new Faltantes();
 
@@ -37,32 +65,17 @@ class PrincipalController extends Controller
 	 	$faltantes->setObsrvc('Observacion de prueba');
 	 	$faltantes->setCodFalt(2233);
 
-	 	$municipio = new Municipio();
-	 	$municipio->setCodMuni(33);
 
-	 	$estado = new Estado();
-	 	$estado->setCodEstd(4343);
-
-	 	$coordinacion = new Coordinacion();
-	 	$coordinacion->setCodCord(134);
-
-	 	$direccion = new Direccion();
-	 	$direccion->setCodDirc(23323);
 
 	 	$faltantes->setCodMuni($municipio);
 	 	$faltantes->setCodEstd($estado);
 	 	$faltantes->setCodCord($coordinacion);
 	 	$faltantes->setCodDirc($direccion);
 
-	 	$em = $this->getDoctrine()->getManager();
-	 	$em->persist($faltantes);
-	 	$em->persist($municipio);
-	 	$em->persist($estado);
-	 	$em->persist($coordinacion);
-	 	$em->persist($direccion);
+		$em->persist($faltantes);
 
 	 	$em->flush();
-
+		/*
 	 	$movimientos = new Movimientos();
 
 	 	$movimientos->setDireccion('Grupo de prueba');
@@ -74,7 +87,7 @@ class PrincipalController extends Controller
 	 	$movimientos->setDiferencia(23232);
 	 	$movimientos->setObsrvc('Observacion de prueba');
 	 	$movimientos->setCodFalt(2233);
-
+		*/
 
 
 	 	$em->flush();
