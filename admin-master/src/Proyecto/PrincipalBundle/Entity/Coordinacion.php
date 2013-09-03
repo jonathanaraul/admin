@@ -24,23 +24,16 @@ class Coordinacion
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="coordinador", type="string", length=255, nullable=false)
+     * @ORM\Column(name="coordinador", type="string", length=255, nullable=true)
      */
     private $coordinador;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_cord", type="integer", nullable=false)
-     */
-    private $codCord;
 
 
 
@@ -98,28 +91,5 @@ class Coordinacion
     public function getCoordinador()
     {
         return $this->coordinador;
-    }
-
-    /**
-     * Set codCord
-     *
-     * @param integer $codCord
-     * @return Coordinacion
-     */
-    public function setCodCord($codCord)
-    {
-        $this->codCord = $codCord;
-    
-        return $this;
-    }
-
-    /**
-     * Get codCord
-     *
-     * @return integer 
-     */
-    public function getCodCord()
-    {
-        return $this->codCord;
     }
 }

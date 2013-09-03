@@ -28,12 +28,5 @@ class TiposBienes
      */
     private $tipoBien;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_tbien", type="integer", nullable=false)
-     */
-    private $codTbien;
-
 
 }

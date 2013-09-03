@@ -40,51 +40,54 @@
     <field name="modTipAnio" type="string" column="mod_tip_anio" length="255" nullable="true"/>
     <field name="color" type="string" column="color" length="255" nullable="true"/>
     <field name="nombreMat" type="string" column="nombre_mat" length="255" nullable="true"/>
-    <field name="codSeg" type="integer" column="cod_seg" nullable="true"/>
-    <field name="codBien" type="integer" column="cod_bien" nullable="true"/>
-    <many-to-one field="codTbien" target-entity="TiposBienes">
+    <many-to-one field="idEstd" target-entity="Estado">
       <join-columns>
-        <join-column name="cod_tbien" referenced-column-name="cod_tbien"/>
+        <join-column name="id_estd" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codRcta" target-entity="ResumenCuentas">
+    <many-to-one field="idTbien" target-entity="TiposBienes">
       <join-columns>
-        <join-column name="cod_rcta" referenced-column-name="cod_rcta"/>
+        <join-column name="id_tbien" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codFalt" target-entity="Faltantes">
+    <many-to-one field="idRcta" target-entity="ResumenCuentas">
       <join-columns>
-        <join-column name="cod_falt" referenced-column-name="cod_falt"/>
+        <join-column name="id_rcta" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codEstd" target-entity="Estado">
+    <many-to-one field="idFalt" target-entity="Faltantes">
       <join-columns>
-        <join-column name="cod_estd" referenced-column-name="cod_estd"/>
+        <join-column name="id_falt" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codMuni" target-entity="Municipio">
+    <many-to-one field="idMuni" target-entity="Municipio">
       <join-columns>
-        <join-column name="cod_muni" referenced-column-name="cod_muni"/>
+        <join-column name="id_muni" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codCord" target-entity="Coordinacion">
+    <many-to-one field="idMvts" target-entity="Movimientos">
       <join-columns>
-        <join-column name="cod_cord" referenced-column-name="cod_cord"/>
+        <join-column name="id_mvts" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codRspn" target-entity="Reponsable">
+    <many-to-one field="idDirc" target-entity="Direccion">
       <join-columns>
-        <join-column name="cod_rspn" referenced-column-name="cod_rspn"/>
+        <join-column name="id_dirc" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codMvts" target-entity="Movimientos">
+    <many-to-one field="idCord" target-entity="Coordinacion">
       <join-columns>
-        <join-column name="cod_mvts" referenced-column-name="cod_mvts"/>
+        <join-column name="id_cord" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codDirc" target-entity="Direccion">
+    <many-to-one field="idRspn" target-entity="Reponsable">
       <join-columns>
-        <join-column name="cod_dirc" referenced-column-name="cod_dirc"/>
+        <join-column name="id_rspn" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idSeg" target-entity="Seguros">
+      <join-columns>
+        <join-column name="id_seg" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

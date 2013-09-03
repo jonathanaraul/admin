@@ -6,7 +6,6 @@
     </id>
     <field name="nombre" type="string" column="nombre" length="100" nullable="false"/>
     <field name="ci" type="string" column="ci" length="25" nullable="false"/>
-    <field name="codRspn" type="integer" column="cod_rspn" nullable="true"/>
     <field name="descrCargo" type="string" column="descr_cargo" length="30" nullable="false"/>
   </entity>
 </doctrine-mapping>

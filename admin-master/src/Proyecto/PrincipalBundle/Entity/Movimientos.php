@@ -73,56 +73,49 @@ class Movimientos
     /**
      * @var integer
      *
-     * @ORM\Column(name="cod_rspn", type="integer", nullable=false)
+     * @ORM\Column(name="id_rspn", type="integer", nullable=false)
      */
-    private $codRspn;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_mvts", type="integer", nullable=false)
-     */
-    private $codMvts;
+    private $idRspn;
 
     /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
      * })
      */
-    private $codMuni;
+    private $idMuni;
 
     /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
      * })
      */
-    private $codDirc;
+    private $idDirc;
 
     /**
      * @var \Coordinacion
      *
      * @ORM\ManyToOne(targetEntity="Coordinacion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     *   @ORM\JoinColumn(name="id_cord", referencedColumnName="id")
      * })
      */
-    private $codCord;
+    private $idCord;
 
     /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     *   @ORM\JoinColumn(name="id_estd", referencedColumnName="id")
      * })
      */
-    private $codEstd;
+    private $idEstd;
 
 
 
@@ -298,140 +291,117 @@ class Movimientos
     }
 
     /**
-     * Set codRspn
+     * Set idRspn
      *
-     * @param integer $codRspn
+     * @param integer $idRspn
      * @return Movimientos
      */
-    public function setCodRspn($codRspn)
+    public function setIdRspn($idRspn)
     {
-        $this->codRspn = $codRspn;
+        $this->idRspn = $idRspn;
     
         return $this;
     }
 
     /**
-     * Get codRspn
+     * Get idRspn
      *
      * @return integer 
      */
-    public function getCodRspn()
+    public function getIdRspn()
     {
-        return $this->codRspn;
+        return $this->idRspn;
     }
 
     /**
-     * Set codMvts
+     * Set idMuni
      *
-     * @param integer $codMvts
+     * @param \Proyecto\PrincipalBundle\Entity\Municipio $idMuni
      * @return Movimientos
      */
-    public function setCodMvts($codMvts)
+    public function setIdMuni(\Proyecto\PrincipalBundle\Entity\Municipio $idMuni = null)
     {
-        $this->codMvts = $codMvts;
+        $this->idMuni = $idMuni;
     
         return $this;
     }
 
     /**
-     * Get codMvts
-     *
-     * @return integer 
-     */
-    public function getCodMvts()
-    {
-        return $this->codMvts;
-    }
-
-    /**
-     * Set codMuni
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Municipio $codMuni
-     * @return Movimientos
-     */
-    public function setCodMuni(\Proyecto\PrincipalBundle\Entity\Municipio $codMuni = null)
-    {
-        $this->codMuni = $codMuni;
-    
-        return $this;
-    }
-
-    /**
-     * Get codMuni
+     * Get idMuni
      *
      * @return \Proyecto\PrincipalBundle\Entity\Municipio 
      */
-    public function getCodMuni()
+    public function getIdMuni()
     {
-        return $this->codMuni;
+        return $this->idMuni;
     }
 
     /**
-     * Set codDirc
+     * Set idDirc
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Direccion $codDirc
+     * @param \Proyecto\PrincipalBundle\Entity\Direccion $idDirc
      * @return Movimientos
      */
-    public function setCodDirc(\Proyecto\PrincipalBundle\Entity\Direccion $codDirc = null)
+    public function setIdDirc(\Proyecto\PrincipalBundle\Entity\Direccion $idDirc = null)
     {
-        $this->codDirc = $codDirc;
+        $this->idDirc = $idDirc;
     
         return $this;
     }
 
     /**
-     * Get codDirc
+     * Get idDirc
      *
      * @return \Proyecto\PrincipalBundle\Entity\Direccion 
      */
-    public function getCodDirc()
+    public function getIdDirc()
     {
-        return $this->codDirc;
+        return $this->idDirc;
     }
 
     /**
-     * Set codCord
+     * Set idCord
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Coordinacion $codCord
+     * @param \Proyecto\PrincipalBundle\Entity\Coordinacion $idCord
      * @return Movimientos
      */
-    public function setCodCord(\Proyecto\PrincipalBundle\Entity\Coordinacion $codCord = null)
+    public function setIdCord(\Proyecto\PrincipalBundle\Entity\Coordinacion $idCord = null)
     {
-        $this->codCord = $codCord;
+        $this->idCord = $idCord;
     
         return $this;
     }
 
     /**
-     * Get codCord
+     * Get idCord
      *
      * @return \Proyecto\PrincipalBundle\Entity\Coordinacion 
      */
-    public function getCodCord()
+    public function getIdCord()
     {
-        return $this->codCord;
+        return $this->idCord;
     }
 
     /**
-     * Set codEstd
+     * Set idEstd
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Estado $codEstd
+     * @param \Proyecto\PrincipalBundle\Entity\Estado $idEstd
      * @return Movimientos
      */
-    public function setCodEstd(\Proyecto\PrincipalBundle\Entity\Estado $codEstd = null)
+    public function setIdEstd(\Proyecto\PrincipalBundle\Entity\Estado $idEstd = null)
     {
-        $this->codEstd = $codEstd;
+        $this->idEstd = $idEstd;
     
         return $this;
     }
 
     /**
-     * Get codEstd
+     * Get idEstd
      *
      * @return \Proyecto\PrincipalBundle\Entity\Estado 
      */
-    public function getCodEstd()
+    public function getIdEstd()
     {
-        return $this->codEstd;
+        return $this->idEstd;
     }
 }

@@ -78,51 +78,44 @@ class Faltantes
     private $obsrvc;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_falt", type="integer", nullable=false)
-     */
-    private $codFalt;
-
-    /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
      * })
      */
-    private $codMuni;
+    private $idMuni;
 
     /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     *   @ORM\JoinColumn(name="id_estd", referencedColumnName="id")
      * })
      */
-    private $codEstd;
+    private $idEstd;
 
     /**
      * @var \Coordinacion
      *
      * @ORM\ManyToOne(targetEntity="Coordinacion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     *   @ORM\JoinColumn(name="id_cord", referencedColumnName="id")
      * })
      */
-    private $codCord;
+    private $idCord;
 
     /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
      * })
      */
-    private $codDirc;
+    private $idDirc;
 
 
 }

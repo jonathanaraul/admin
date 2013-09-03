@@ -49,12 +49,5 @@ class Seguros
      */
     private $vigHasta;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_seg", type="integer", nullable=false)
-     */
-    private $codSeg;
-
 
 }

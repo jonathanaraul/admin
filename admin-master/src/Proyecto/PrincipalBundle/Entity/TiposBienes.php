@@ -28,13 +28,6 @@ class TiposBienes
      */
     private $tipoBien;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_tbien", type="integer", nullable=false)
-     */
-    private $codTbien;
-
 
 
     /**
@@ -68,28 +61,5 @@ class TiposBienes
     public function getTipoBien()
     {
         return $this->tipoBien;
-    }
-
-    /**
-     * Set codTbien
-     *
-     * @param integer $codTbien
-     * @return TiposBienes
-     */
-    public function setCodTbien($codTbien)
-    {
-        $this->codTbien = $codTbien;
-    
-        return $this;
-    }
-
-    /**
-     * Get codTbien
-     *
-     * @return integer 
-     */
-    public function getCodTbien()
-    {
-        return $this->codTbien;
     }
 }

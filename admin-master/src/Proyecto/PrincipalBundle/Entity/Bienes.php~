@@ -274,108 +274,104 @@ class Bienes
     private $nombreMat;
 
     /**
-     * @var integer
+     * @var \Seguros
      *
-     * @ORM\Column(name="cod_seg", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Seguros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_seg", referencedColumnName="id")
+     * })
      */
-    private $codSeg;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_bien", type="integer", nullable=true)
-     */
-    private $codBien;
+    private $idSeg;
 
     /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
      * })
      */
-    private $codDirc;
+    private $idDirc;
 
     /**
      * @var \Coordinacion
      *
      * @ORM\ManyToOne(targetEntity="Coordinacion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     *   @ORM\JoinColumn(name="id_cord", referencedColumnName="id")
      * })
      */
-    private $codCord;
+    private $idCord;
 
     /**
      * @var \Reponsable
      *
      * @ORM\ManyToOne(targetEntity="Reponsable")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_rspn", referencedColumnName="cod_rspn")
+     *   @ORM\JoinColumn(name="id_rspn", referencedColumnName="id")
      * })
      */
-    private $codRspn;
+    private $idRspn;
 
     /**
      * @var \Movimientos
      *
      * @ORM\ManyToOne(targetEntity="Movimientos")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_mvts", referencedColumnName="cod_mvts")
+     *   @ORM\JoinColumn(name="id_mvts", referencedColumnName="id")
      * })
      */
-    private $codMvts;
+    private $idMvts;
 
     /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
      * })
      */
-    private $codMuni;
+    private $idMuni;
 
     /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     *   @ORM\JoinColumn(name="id_estd", referencedColumnName="id")
      * })
      */
-    private $codEstd;
+    private $idEstd;
 
     /**
      * @var \TiposBienes
      *
      * @ORM\ManyToOne(targetEntity="TiposBienes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_tbien", referencedColumnName="cod_tbien")
+     *   @ORM\JoinColumn(name="id_tbien", referencedColumnName="id")
      * })
      */
-    private $codTbien;
+    private $idTbien;
 
     /**
      * @var \ResumenCuentas
      *
      * @ORM\ManyToOne(targetEntity="ResumenCuentas")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_rcta", referencedColumnName="cod_rcta")
+     *   @ORM\JoinColumn(name="id_rcta", referencedColumnName="id")
      * })
      */
-    private $codRcta;
+    private $idRcta;
 
     /**
      * @var \Faltantes
      *
      * @ORM\ManyToOne(targetEntity="Faltantes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_falt", referencedColumnName="cod_falt")
+     *   @ORM\JoinColumn(name="id_falt", referencedColumnName="id")
      * })
      */
-    private $codFalt;
+    private $idFalt;
 
 
 }

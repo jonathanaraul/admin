@@ -73,56 +73,49 @@ class Movimientos
     /**
      * @var integer
      *
-     * @ORM\Column(name="cod_rspn", type="integer", nullable=false)
+     * @ORM\Column(name="id_rspn", type="integer", nullable=false)
      */
-    private $codRspn;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_mvts", type="integer", nullable=false)
-     */
-    private $codMvts;
+    private $idRspn;
 
     /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
      * })
      */
-    private $codMuni;
+    private $idMuni;
 
     /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
      * })
      */
-    private $codDirc;
+    private $idDirc;
 
     /**
      * @var \Coordinacion
      *
      * @ORM\ManyToOne(targetEntity="Coordinacion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     *   @ORM\JoinColumn(name="id_cord", referencedColumnName="id")
      * })
      */
-    private $codCord;
+    private $idCord;
 
     /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     *   @ORM\JoinColumn(name="id_estd", referencedColumnName="id")
      * })
      */
-    private $codEstd;
+    private $idEstd;
 
 
 }

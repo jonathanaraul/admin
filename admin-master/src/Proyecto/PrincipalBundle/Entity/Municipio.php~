@@ -24,16 +24,9 @@ class Municipio
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=100, nullable=true)
      */
     private $nombre;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_muni", type="integer", nullable=false)
-     */
-    private $codMuni;
 
 
 }

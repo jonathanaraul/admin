@@ -4,15 +4,14 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="codRcta" type="integer" column="cod_rcta" nullable="false"/>
-    <many-to-one field="codMuni" target-entity="Municipio">
+    <many-to-one field="idEstd" target-entity="Estado">
       <join-columns>
-        <join-column name="cod_muni" referenced-column-name="cod_muni"/>
+        <join-column name="id_estd" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="codEstd" target-entity="Estado">
+    <many-to-one field="idMuni" target-entity="Municipio">
       <join-columns>
-        <join-column name="cod_estd" referenced-column-name="cod_estd"/>
+        <join-column name="id_muni" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

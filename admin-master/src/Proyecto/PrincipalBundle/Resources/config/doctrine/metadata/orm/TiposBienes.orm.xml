@@ -5,6 +5,5 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="tipoBien" type="string" column="tipo_bien" length="40" nullable="false"/>
-    <field name="codTbien" type="integer" column="cod_tbien" nullable="false"/>
   </entity>
 </doctrine-mapping>

@@ -24,16 +24,9 @@ class Estado
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_estd", type="integer", nullable=false)
-     */
-    private $codEstd;
 
 
 }

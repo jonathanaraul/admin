@@ -49,13 +49,6 @@ class Seguros
      */
     private $vigHasta;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_seg", type="integer", nullable=false)
-     */
-    private $codSeg;
-
 
 
     /**
@@ -158,28 +151,5 @@ class Seguros
     public function getVigHasta()
     {
         return $this->vigHasta;
-    }
-
-    /**
-     * Set codSeg
-     *
-     * @param integer $codSeg
-     * @return Seguros
-     */
-    public function setCodSeg($codSeg)
-    {
-        $this->codSeg = $codSeg;
-    
-        return $this;
-    }
-
-    /**
-     * Get codSeg
-     *
-     * @return integer 
-     */
-    public function getCodSeg()
-    {
-        return $this->codSeg;
     }
 }

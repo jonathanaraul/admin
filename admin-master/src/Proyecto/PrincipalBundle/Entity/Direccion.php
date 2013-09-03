@@ -24,23 +24,16 @@ class Direccion
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="director", type="string", length=255, nullable=false)
+     * @ORM\Column(name="director", type="string", length=255, nullable=true)
      */
     private $director;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_dirc", type="integer", nullable=false)
-     */
-    private $codDirc;
 
 
 
@@ -98,28 +91,5 @@ class Direccion
     public function getDirector()
     {
         return $this->director;
-    }
-
-    /**
-     * Set codDirc
-     *
-     * @param integer $codDirc
-     * @return Direccion
-     */
-    public function setCodDirc($codDirc)
-    {
-        $this->codDirc = $codDirc;
-    
-        return $this;
-    }
-
-    /**
-     * Get codDirc
-     *
-     * @return integer 
-     */
-    public function getCodDirc()
-    {
-        return $this->codDirc;
     }
 }

@@ -8,6 +8,5 @@
     <field name="poliza" type="string" column="poliza" length="50" nullable="false"/>
     <field name="vigDesde" type="date" column="vig_desde" nullable="false"/>
     <field name="vigHasta" type="date" column="vig_hasta" nullable="false"/>
-    <field name="codSeg" type="integer" column="cod_seg" nullable="false"/>
   </entity>
 </doctrine-mapping>

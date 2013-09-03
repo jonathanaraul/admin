@@ -36,13 +36,6 @@ class Reponsable
     private $ci;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_rspn", type="integer", nullable=true)
-     */
-    private $codRspn;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="descr_cargo", type="string", length=30, nullable=false)

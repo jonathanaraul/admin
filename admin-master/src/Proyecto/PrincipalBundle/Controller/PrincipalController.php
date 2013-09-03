@@ -29,19 +29,15 @@ class PrincipalController extends Controller
 
 
 		$municipio = new Municipio();
-	 	$municipio->setCodMuni(33);
 	 	$municipio->setNombre('Nombremunicipio');
 
 	 	$estado = new Estado();
-	 	$estado->setCodEstd(4343);
 	 	$municipio->setNombre('Nombreestado');
 
 	 	$coordinacion = new Coordinacion();
-	 	$coordinacion->setCodCord(134);
-	 	$coordinacion->setCoordinador('nombrecordinador')
+	 	$coordinacion->setCoordinador('nombrecordinador');
 
 	 	$direccion = new Direccion();
-	 	$direccion->setCodDirc(23323);
 	 	$direccion->setDirector('nombredirector');
 	 	$direccion->setNombre('Nomre');
 	 	
@@ -54,7 +50,6 @@ class PrincipalController extends Controller
 		$em->flush();
 
 	 	$faltantes = new Faltantes();
-
 	 	$faltantes->setGrupo('Grupo de prueba');
 	 	$faltantes->setSubgrupo('Sub grupo de prueba');
 	 	$faltantes->setSeccion('Seccion de prueba');
@@ -63,14 +58,11 @@ class PrincipalController extends Controller
 	 	$faltantes->setValorUni(123232);
 	 	$faltantes->setDiferencia(23232);
 	 	$faltantes->setObsrvc('Observacion de prueba');
-	 	$faltantes->setCodFalt(2233);
 
-
-
-	 	$faltantes->setCodMuni($municipio);
-	 	$faltantes->setCodEstd($estado);
-	 	$faltantes->setCodCord($coordinacion);
-	 	$faltantes->setCodDirc($direccion);
+	 	$faltantes->setIdMuni($municipio);
+	 	$faltantes->setIdEstd($estado);
+	 	$faltantes->setIdCord($coordinacion);
+	 	$faltantes->setIdDirc($direccion);
 
 		$em->persist($faltantes);
 

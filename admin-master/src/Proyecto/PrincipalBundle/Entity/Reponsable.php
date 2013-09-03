@@ -36,13 +36,6 @@ class Reponsable
     private $ci;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_rspn", type="integer", nullable=true)
-     */
-    private $codRspn;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="descr_cargo", type="string", length=30, nullable=false)
@@ -105,29 +98,6 @@ class Reponsable
     public function getCi()
     {
         return $this->ci;
-    }
-
-    /**
-     * Set codRspn
-     *
-     * @param integer $codRspn
-     * @return Reponsable
-     */
-    public function setCodRspn($codRspn)
-    {
-        $this->codRspn = $codRspn;
-    
-        return $this;
-    }
-
-    /**
-     * Get codRspn
-     *
-     * @return integer 
-     */
-    public function getCodRspn()
-    {
-        return $this->codRspn;
     }
 
     /**

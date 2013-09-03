@@ -78,51 +78,44 @@ class Faltantes
     private $obsrvc;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_falt", type="integer", nullable=false)
-     */
-    private $codFalt;
-
-    /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
      * })
      */
-    private $codMuni;
+    private $idMuni;
 
     /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     *   @ORM\JoinColumn(name="id_estd", referencedColumnName="id")
      * })
      */
-    private $codEstd;
+    private $idEstd;
 
     /**
      * @var \Coordinacion
      *
      * @ORM\ManyToOne(targetEntity="Coordinacion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_cord", referencedColumnName="cod_cord")
+     *   @ORM\JoinColumn(name="id_cord", referencedColumnName="id")
      * })
      */
-    private $codCord;
+    private $idCord;
 
     /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_dirc", referencedColumnName="cod_dirc")
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
      * })
      */
-    private $codDirc;
+    private $idDirc;
 
 
 
@@ -321,117 +314,94 @@ class Faltantes
     }
 
     /**
-     * Set codFalt
+     * Set idMuni
      *
-     * @param integer $codFalt
+     * @param \Proyecto\PrincipalBundle\Entity\Municipio $idMuni
      * @return Faltantes
      */
-    public function setCodFalt($codFalt)
+    public function setIdMuni(\Proyecto\PrincipalBundle\Entity\Municipio $idMuni = null)
     {
-        $this->codFalt = $codFalt;
+        $this->idMuni = $idMuni;
     
         return $this;
     }
 
     /**
-     * Get codFalt
-     *
-     * @return integer 
-     */
-    public function getCodFalt()
-    {
-        return $this->codFalt;
-    }
-
-    /**
-     * Set codMuni
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Municipio $codMuni
-     * @return Faltantes
-     */
-    public function setCodMuni(\Proyecto\PrincipalBundle\Entity\Municipio $codMuni = null)
-    {
-        $this->codMuni = $codMuni;
-    
-        return $this;
-    }
-
-    /**
-     * Get codMuni
+     * Get idMuni
      *
      * @return \Proyecto\PrincipalBundle\Entity\Municipio 
      */
-    public function getCodMuni()
+    public function getIdMuni()
     {
-        return $this->codMuni;
+        return $this->idMuni;
     }
 
     /**
-     * Set codEstd
+     * Set idEstd
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Estado $codEstd
+     * @param \Proyecto\PrincipalBundle\Entity\Estado $idEstd
      * @return Faltantes
      */
-    public function setCodEstd(\Proyecto\PrincipalBundle\Entity\Estado $codEstd = null)
+    public function setIdEstd(\Proyecto\PrincipalBundle\Entity\Estado $idEstd = null)
     {
-        $this->codEstd = $codEstd;
+        $this->idEstd = $idEstd;
     
         return $this;
     }
 
     /**
-     * Get codEstd
+     * Get idEstd
      *
      * @return \Proyecto\PrincipalBundle\Entity\Estado 
      */
-    public function getCodEstd()
+    public function getIdEstd()
     {
-        return $this->codEstd;
+        return $this->idEstd;
     }
 
     /**
-     * Set codCord
+     * Set idCord
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Coordinacion $codCord
+     * @param \Proyecto\PrincipalBundle\Entity\Coordinacion $idCord
      * @return Faltantes
      */
-    public function setCodCord(\Proyecto\PrincipalBundle\Entity\Coordinacion $codCord = null)
+    public function setIdCord(\Proyecto\PrincipalBundle\Entity\Coordinacion $idCord = null)
     {
-        $this->codCord = $codCord;
+        $this->idCord = $idCord;
     
         return $this;
     }
 
     /**
-     * Get codCord
+     * Get idCord
      *
      * @return \Proyecto\PrincipalBundle\Entity\Coordinacion 
      */
-    public function getCodCord()
+    public function getIdCord()
     {
-        return $this->codCord;
+        return $this->idCord;
     }
 
     /**
-     * Set codDirc
+     * Set idDirc
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Direccion $codDirc
+     * @param \Proyecto\PrincipalBundle\Entity\Direccion $idDirc
      * @return Faltantes
      */
-    public function setCodDirc(\Proyecto\PrincipalBundle\Entity\Direccion $codDirc = null)
+    public function setIdDirc(\Proyecto\PrincipalBundle\Entity\Direccion $idDirc = null)
     {
-        $this->codDirc = $codDirc;
+        $this->idDirc = $idDirc;
     
         return $this;
     }
 
     /**
-     * Get codDirc
+     * Get idDirc
      *
      * @return \Proyecto\PrincipalBundle\Entity\Direccion 
      */
-    public function getCodDirc()
+    public function getIdDirc()
     {
-        return $this->codDirc;
+        return $this->idDirc;
     }
 }

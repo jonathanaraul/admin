@@ -24,16 +24,9 @@ class Estado
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_estd", type="integer", nullable=false)
-     */
-    private $codEstd;
 
 
 
@@ -68,28 +61,5 @@ class Estado
     public function getNombre()
     {
         return $this->nombre;
-    }
-
-    /**
-     * Set codEstd
-     *
-     * @param integer $codEstd
-     * @return Estado
-     */
-    public function setCodEstd($codEstd)
-    {
-        $this->codEstd = $codEstd;
-    
-        return $this;
-    }
-
-    /**
-     * Get codEstd
-     *
-     * @return integer 
-     */
-    public function getCodEstd()
-    {
-        return $this->codEstd;
     }
 }

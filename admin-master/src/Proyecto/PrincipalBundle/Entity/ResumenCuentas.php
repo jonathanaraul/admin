@@ -22,31 +22,24 @@ class ResumenCuentas
     private $id;
 
     /**
-     * @var integer
+     * @var \Municipio
      *
-     * @ORM\Column(name="cod_rcta", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Municipio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
+     * })
      */
-    private $codRcta;
+    private $idMuni;
 
     /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_estd", referencedColumnName="cod_estd")
+     *   @ORM\JoinColumn(name="id_estd", referencedColumnName="id")
      * })
      */
-    private $codEstd;
-
-    /**
-     * @var \Municipio
-     *
-     * @ORM\ManyToOne(targetEntity="Municipio")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cod_muni", referencedColumnName="cod_muni")
-     * })
-     */
-    private $codMuni;
+    private $idEstd;
 
 
 
@@ -61,71 +54,48 @@ class ResumenCuentas
     }
 
     /**
-     * Set codRcta
+     * Set idMuni
      *
-     * @param integer $codRcta
+     * @param \Proyecto\PrincipalBundle\Entity\Municipio $idMuni
      * @return ResumenCuentas
      */
-    public function setCodRcta($codRcta)
+    public function setIdMuni(\Proyecto\PrincipalBundle\Entity\Municipio $idMuni = null)
     {
-        $this->codRcta = $codRcta;
+        $this->idMuni = $idMuni;
     
         return $this;
     }
 
     /**
-     * Get codRcta
-     *
-     * @return integer 
-     */
-    public function getCodRcta()
-    {
-        return $this->codRcta;
-    }
-
-    /**
-     * Set codEstd
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Estado $codEstd
-     * @return ResumenCuentas
-     */
-    public function setCodEstd(\Proyecto\PrincipalBundle\Entity\Estado $codEstd = null)
-    {
-        $this->codEstd = $codEstd;
-    
-        return $this;
-    }
-
-    /**
-     * Get codEstd
-     *
-     * @return \Proyecto\PrincipalBundle\Entity\Estado 
-     */
-    public function getCodEstd()
-    {
-        return $this->codEstd;
-    }
-
-    /**
-     * Set codMuni
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Municipio $codMuni
-     * @return ResumenCuentas
-     */
-    public function setCodMuni(\Proyecto\PrincipalBundle\Entity\Municipio $codMuni = null)
-    {
-        $this->codMuni = $codMuni;
-    
-        return $this;
-    }
-
-    /**
-     * Get codMuni
+     * Get idMuni
      *
      * @return \Proyecto\PrincipalBundle\Entity\Municipio 
      */
-    public function getCodMuni()
+    public function getIdMuni()
     {
-        return $this->codMuni;
+        return $this->idMuni;
+    }
+
+    /**
+     * Set idEstd
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Estado $idEstd
+     * @return ResumenCuentas
+     */
+    public function setIdEstd(\Proyecto\PrincipalBundle\Entity\Estado $idEstd = null)
+    {
+        $this->idEstd = $idEstd;
+    
+        return $this;
+    }
+
+    /**
+     * Get idEstd
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Estado 
+     */
+    public function getIdEstd()
+    {
+        return $this->idEstd;
     }
 }

@@ -24,16 +24,9 @@ class Municipio
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=100, nullable=true)
      */
     private $nombre;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="cod_muni", type="integer", nullable=false)
-     */
-    private $codMuni;
 
 
 
@@ -68,28 +61,5 @@ class Municipio
     public function getNombre()
     {
         return $this->nombre;
-    }
-
-    /**
-     * Set codMuni
-     *
-     * @param integer $codMuni
-     * @return Municipio
-     */
-    public function setCodMuni($codMuni)
-    {
-        $this->codMuni = $codMuni;
-    
-        return $this;
-    }
-
-    /**
-     * Get codMuni
-     *
-     * @return integer 
-     */
-    public function getCodMuni()
-    {
-        return $this->codMuni;
     }
 }
