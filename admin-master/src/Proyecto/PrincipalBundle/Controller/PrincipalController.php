@@ -19,49 +19,65 @@ use Proyecto\PrincipalBundle\Entity\Coordinacion;
 use Proyecto\PrincipalBundle\Entity\Faltantes;
 use Proyecto\PrincipalBundle\Entity\Municipio;
 use Proyecto\PrincipalBundle\Entity\Estado;
+use Proyecto\PrincipalBundle\Entity\Movimientos;
 
 class PrincipalController extends Controller
 {
 	 public function portadaAction(){
 
-	 	// $faltantes = new Faltantes();
+	 	$faltantes = new Faltantes();
 
-	 	// $faltantes->setGrupo('Grupo de prueba');
-	 	// $faltantes->setSubgrupo('Sub grupo de prueba');
-	 	// $faltantes->setSeccion('Seccion de prueba');
-	 	// $faltantes->setDescripcion('Descripcion de prueba');
-	 	// $faltantes->setCantidad(123323);
-	 	// $faltantes->setValorUni(123232);
-	 	// $faltantes->setDiferencia(23232);
-	 	// $faltantes->setObsrvc('Observacion de prueba');
-	 	// $faltantes->setCodFalt(2233);
+	 	$faltantes->setGrupo('Grupo de prueba');
+	 	$faltantes->setSubgrupo('Sub grupo de prueba');
+	 	$faltantes->setSeccion('Seccion de prueba');
+	 	$faltantes->setDescripcion('Descripcion de prueba');
+	 	$faltantes->setCantidad(123323);
+	 	$faltantes->setValorUni(123232);
+	 	$faltantes->setDiferencia(23232);
+	 	$faltantes->setObsrvc('Observacion de prueba');
+	 	$faltantes->setCodFalt(2233);
 
-	 	// $municipio = new Municipio();
-	 	// $municipio->setCodMuni(33);
+	 	$municipio = new Municipio();
+	 	$municipio->setCodMuni(33);
 
-	 	// $estado = new Estado();
-	 	// $estado->setCodEstd(4343);
+	 	$estado = new Estado();
+	 	$estado->setCodEstd(4343);
 
-	 	// $coordinacion = new Coordinacion();
-	 	// $coordinacion->setCodCord(134);
+	 	$coordinacion = new Coordinacion();
+	 	$coordinacion->setCodCord(134);
 
-	 	// $direccion = new Direccion();
-	 	// $direccion->setCodDirc(23323);
+	 	$direccion = new Direccion();
+	 	$direccion->setCodDirc(23323);
 
-	 	// $faltantes->setCodMuni($municipio);
-	 	// $faltantes->setCodEstd($estado);
-	 	// $faltantes->setCodCord($coordinacion);
-	 	// $faltantes->setCodDirc($direccion);
+	 	$faltantes->setCodMuni($municipio);
+	 	$faltantes->setCodEstd($estado);
+	 	$faltantes->setCodCord($coordinacion);
+	 	$faltantes->setCodDirc($direccion);
 
-	 	// $em = $this->getDoctrine()->getManager();
-	 	// $em->persist($faltantes);
-	 	// $em->persist($municipio);
-	 	// $em->persist($estado);
-	 	// $em->persist($coordinacion);
-	 	// $em->persist($direccion);
+	 	$em = $this->getDoctrine()->getManager();
+	 	$em->persist($faltantes);
+	 	$em->persist($municipio);
+	 	$em->persist($estado);
+	 	$em->persist($coordinacion);
+	 	$em->persist($direccion);
 
-	 	// $em->flush();
+	 	$em->flush();
 
+	 	$movimientos = new Movimientos();
+
+	 	$movimientos->setDireccion('Grupo de prueba');
+	 	$movimientos->setSubgrupo('Sub grupo de prueba');
+	 	$movimientos->setSeccion('Seccion de prueba');
+	 	$movimientos->setDescripcion('Descripcion de prueba');
+	 	$movimientos->setCantidad(123323);
+	 	$movimientos->setValorUni(123232);
+	 	$movimientos->setDiferencia(23232);
+	 	$movimientos->setObsrvc('Observacion de prueba');
+	 	$movimientos->setCodFalt(2233);
+
+
+
+	 	$em->flush();
 
 
 
