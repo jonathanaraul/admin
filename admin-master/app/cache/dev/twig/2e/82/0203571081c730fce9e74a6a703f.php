@@ -47,7 +47,10 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 \t<li>
 \t\tBienes
 \t\t\t<ul>
-\t\t\t\t<li><a >Aregar</a></li>
+\t\t\t\t<li><a href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "resumen_bienes")), "html", null, true);
+        echo "\" class ='agregar_bienes'>Aregar</a></li>
 \t\t\t\t<li>Listar</li>
 \t\t\t</ul>
 \t</li>\t 
@@ -74,14 +77,20 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 \t<li>
 \t\tFaltantes
 \t\t\t<ul>
-\t\t\t\t<li>Agregar</li>
+\t\t\t\t<li><a href=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "faltantes")), "html", null, true);
+        echo "\" class ='agregar_faltantes'>Aregar</a></li>
 \t\t\t\t<li>Listar</li>
 \t\t\t</ul>
 \t</li>
 \t<li>
 \t\tMovimientos
 \t\t\t<ul>
-\t\t\t\t<li>Agregar</li>
+\t\t\t\t<li><a href=\"";
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "movimientos")), "html", null, true);
+        echo "\" class ='agregar_movimientos'>Aregar</a></li>
 \t\t\t\t<li>Listar</li>
 \t\t\t</ul>
 \t</li>
@@ -98,7 +107,10 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 \t<li>
 \t\tResumen de cuentas
 \t\t\t<ul>
-\t\t\t\t<li>Agregar</li>
+\t\t\t\t<li><a href=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "resumen_cuentas")), "html", null, true);
+        echo "\" class ='agregar_resumen_cuentas'>Aregar</a></li>
 \t\t\t\t<li>Listar</li>
 \t\t\t</ul>
 \t</li>
@@ -130,6 +142,6 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  110 => 66,  93 => 52,  69 => 31,  59 => 24,  43 => 10,  40 => 9,  35 => 6,  30 => 3,);
+        return array (  122 => 66,  112 => 59,  102 => 52,  92 => 45,  82 => 38,  72 => 31,  62 => 24,  52 => 17,  43 => 10,  40 => 9,  35 => 6,  30 => 3,);
     }
 }

@@ -20,81 +20,15 @@ use Proyecto\PrincipalBundle\Entity\Faltantes;
 use Proyecto\PrincipalBundle\Entity\Municipio;
 use Proyecto\PrincipalBundle\Entity\Estado;
 use Proyecto\PrincipalBundle\Entity\Movimientos;
+use Proyecto\PrincipalBundle\Entity\ResumenCuentas;
+use Proyecto\PrincipalBundle\Entity\TiposBienes;
+
 
 class PrincipalController extends Controller
 {
 	 public function portadaAction(){
-	 	
-	 	$em = $this->getDoctrine()->getManager();
 
-///////////////////////////////////
-	    $municipio = $this->getDoctrine()
-	        ->getRepository('ProyectoPrincipalBundle:Municipio')
-	        ->find(23);
-	    // $variableMunicipio = $municipio->getId();
-
-/////////////////////////////////
-	    $estado = $this->getDoctrine()
-	        ->getRepository('ProyectoPrincipalBundle:Estado')
-	        ->find(25);
-	    // $variableEstado = $estado->getId();
-/////////////////////////////
-	    $coordinacion = $this->getDoctrine()
-	        ->getRepository('ProyectoPrincipalBundle:Coordinacion')
-	        ->find(28);
-	    // $variableCoordinacion = $coordinacion->getId();
-/////////////////////////
-	    $direccion = $this->getDoctrine()
-	        ->getRepository('ProyectoPrincipalBundle:Direccion')
-	        ->find(27);
-	    // $variableDireccion = $direccion->getId();
-//////////////////////
-
-		// $municipio = new Municipio();
-		// $municipio->setNombre('Nombremunicipio');
-
-	 	// $estado = new Estado();
-	 	// $estado->setNombre('nombre estado');
-
-	 	// $coordinacion = new Coordinacion();
-	 	// $coordinacion->setCoordinador('nombrecordinador');
-
-	 	// $direccion = new Direccion();
-	 	// $direccion->setDirector('nombredirector');
-	 	// $direccion->setNombre('Nomre');
-
-	 	$faltantes = new Faltantes();
-
-	 	$faltantes->setGrupo('Grupo de prueba');
-	 	$faltantes->setSubgrupo('Sub grupo de prueba');
-	 	$faltantes->setSeccion('Seccion de prueba');
-	 	$faltantes->setDescripcion('Descripcion de prueba');
-	 	$faltantes->setCantidad(123323);
-	 	$faltantes->setValorUni(123232);
-	 	$faltantes->setDiferencia(23232);
-	 	$faltantes->setObsrvc('Observacion de prueba');
-
-	 	$faltantes->setIdMuni($municipio);
-	 	$faltantes->setIdEstd($estado);
-	 	$faltantes->setIdCord($coordinacion);
-	 	$faltantes->setIdDirc($direccion);
-
-		$em->persist($faltantes);
-
-	 	$em->flush();
-		/*
-	 	$movimientos = new Movimientos();
-
-	 	$movimientos->setDireccion('Grupo de prueba');
-	 	$movimientos->setSubgrupo('Sub grupo de prueba');
-	 	$movimientos->setSeccion('Seccion de prueba');
-	 	$movimientos->setDescripcion('Descripcion de prueba');
-	 	$movimientos->setCantidad(123323);
-	 	$movimientos->setValorUni(123232);
-	 	$movimientos->setDiferencia(23232);
-	 	$movimientos->setObsrvc('Observacion de prueba');
-	 	$movimientos->setCodFalt(2233);
-		*/
+		$em = $this->getDoctrine()->getManager();
 
 	 	return $this->render('ProyectoPrincipalBundle:Principal:portada.html.twig', array());
 	 }
@@ -112,6 +46,7 @@ class PrincipalController extends Controller
 
 		$modulo = $post -> get("modulo");
 
+		$em = $this->getDoctrine()->getManager();
 
 		switch ($modulo) {
 			case 'seguros':
@@ -135,7 +70,7 @@ class PrincipalController extends Controller
 				$seguros->setVigHasta(new \DateTime('11-11-1990'));
 				$seguros->setCodSeg($codigo_seguro);
 
-				$em = $this->getDoctrine()->getManager();
+				
 			    $em->persist($seguros);
 			    $em->flush();
 
@@ -159,7 +94,7 @@ class PrincipalController extends Controller
 				$responsable->setCodRspn(3232);
 
 
-				$em = $this->getDoctrine()->getManager();
+				
 			    $em->persist($responsable);
 			    $em->flush();
 
@@ -177,7 +112,7 @@ class PrincipalController extends Controller
 				$direccion   ->setDirector($nombre_director);
 				$direccion   ->setCodDirc(12345);
 
-				$em = $this->getDoctrine()->getManager();
+				
 			    $em->persist($direccion);
 			    $em->flush();
 
@@ -201,8 +136,226 @@ class PrincipalController extends Controller
 			    $em->persist($coordinacion);
 			    $em->flush();
 				break;
+
+			case 'faltantes':
+	 	
+				$faltantes = new Faltantes();
+
+		///////////////////////////////////
+			    $municipio = $this->getDoctrine()
+			        ->getRepository('ProyectoPrincipalBundle:Municipio')
+			        ->find(23);
+
+		/////////////////////////////////
+			    $estado = $this->getDoctrine()
+			        ->getRepository('ProyectoPrincipalBundle:Estado')
+			        ->find(25);
+			    // $variableEstado = $estado->getId();
+		/////////////////////////////
+			    $coordinacion = $this->getDoctrine()
+			        ->getRepository('ProyectoPrincipalBundle:Coordinacion')
+			        ->find(28);
+			    // $variableCoordinacion = $coordinacion->getId();
+		/////////////////////////
+			    $direccion = $this->getDoctrine()
+			        ->getRepository('ProyectoPrincipalBundle:Direccion')
+			        ->find(27);
+			    // $variableDireccion = $direccion->getId();
+		//////////////////////
+
+			 	
+			 	$faltantes->setGrupo('Grupo de prueba');
+			 	$faltantes->setSubgrupo('Sub grupo de prueba');
+			 	$faltantes->setSeccion('Seccion de prueba');
+			 	$faltantes->setDescripcion('Descripcion de prueba');
+			 	$faltantes->setCantidad(123323);
+			 	$faltantes->setValorUni(123232);
+			 	$faltantes->setDiferencia(23232);
+			 	$faltantes->setObsrvc('Observacion de prueba');
+
+			 	$faltantes->setIdMuni($municipio);
+			 	$faltantes->setIdEstd($estado);
+			 	$faltantes->setIdCord($coordinacion);
+			 	$faltantes->setIdDirc($direccion);
+
+			 	
+				$em->persist($faltantes);
+			 	$em->flush();
+
+				break;
+
+			case'movimientos':
+
+			 	$movimientos = new Movimientos();
+
+			 	$movimientos->setDireccion('direccion prueba');
+			 	$movimientos->setPeriodo(new \DateTime());
+			 	$movimientos->setGrupo('grupo prueba');
+			 	$movimientos->setSubgrupo('sub grupo prueba');
+			 	$movimientos->setSeccion('seccion prueba');
+			 	$movimientos->setConcepto('concepto prueba');
+			 	$movimientos->setCantidad(3242);
+
+
+				$responsable = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Reponsable')
+				    ->find(1);
+				///////////////////////////////////
+				$municipio = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Municipio')
+				    ->find(23);
+
+				/////////////////////////////////
+				$estado = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Estado')
+				    ->find(25);
+					    // $variableEstado = $estado->getId();
+				/////////////////////////////
+				$coordinacion = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Coordinacion')
+				    ->find(28);
+					    // $variableCoordinacion = $coordinacion->getId();
+				/////////////////////////
+				$direccion = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Direccion')
+				    ->find(27);
+					    // $variableDireccion = $direccion->getId();
+				//////////////////////
+
+			 	$movimientos->setIdRspn($responsable);
+			 	$movimientos->setIdMuni($municipio);
+				$movimientos->setIdEstd($estado);
+				$movimientos->setIdCord($coordinacion);
+				$movimientos->setIdDirc($direccion);
+
+				$em = $this->getDoctrine()->getManager();
+			 	$em->persist($movimientos);
+				$em->flush();
+
+				break;
+
+			case 'resumen_cuentas':
+
+			 	$resumen_cuentas = new ResumenCuentas();
+
+			 	$resumen_cuentas->setNombRcuentas('nombre Resumen Cuentas prueba');
+
+				$municipio = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Municipio')
+				    ->find(23);
+
+				$estado = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Estado')
+				    ->find(25);
+
+
+			 	$resumen_cuentas->setIdMuni($municipio);
+				$resumen_cuentas->setIdEstd($estado);
+
+
+			 	$em->persist($resumen_cuentas);
+				$em->flush();
+
+				break;
+
+			case 'bienes':
+
+			 	$bienes = new Bienes();
+
+			 	$bienes->setFechaAdqui(new \DateTime());
+			 	$bienes->setNumCorrInv(12223);
+			 	$bienes->setSerial('12223');
+			 	$bienes->setPlaca('placa de prueba');
+			 	$bienes->setNOrdCompra(343434);
+			 	$bienes->setFOrdCompra(new \DateTime());
+			 	$bienes->setNpOrdCompra('Nombre de orden de compra');
+			 	$bienes->setNfacOrdCompr(343434);
+			 	$bienes->setFfacOrdCompr(new \DateTime());
+			 	$bienes->setEmOrdCompr('emisor orden de compra prueba');
+			 	$bienes->setImnmuOCompr('inmuebleee');
+			 	$bienes->setFadqOCompr(new \DateTime());
+			 	$bienes->setNcorOCompr(343434);
+			 	$bienes->setCiNOCompr('cinocompra prueba');
+			 	$bienes->setRifNOComp('rif no compra');
+			 	$bienes->setUbcOCompr('ubs ord compr');
+			 	$bienes->setNumOrdPag(343434);
+			 	$bienes->setFechOrdPag(new \DateTime());
+			 	$bienes->setPradOrdPag(343434);
+			 	$bienes->setTbnOrdPag('setTbnOrdPag setTbnOrdPag setTbnOrdPag');
+			 	$bienes->setDisOrdCom('setDisOrdCom setDisOrdCom setDisOrdCom');
+			 	$bienes->setFrmOrdPag(new \DateTime());
+			 	$bienes->setDrmOrdPag('setDrmOrdPag setDrmOrdPag setDrmOrdPag');
+			 	$bienes->setOfcDrOPag('setOfcDrOPag setOfcDrOPag');
+			 	$bienes->setNDrOPag(43434343);
+			 	$bienes->setTDrOPag('setTDrOPag setTDrOPag');
+			 	$bienes->setFDrOPag('setFDrOPag setFDrOPag');
+			 	$bienes->setPDrOPag('setPDrOPag');
+			 	$bienes->setTrDrOPag('setTrDrOPag');
+				$bienes->setFchDrOPag(new \DateTime());
+				$bienes->setFchAcOPag(new \DateTime());
+			 	$bienes->setMntAcOPag(43434343);
+			 	$bienes->setNombreMarc('setNombreMarc');
+			 	$bienes->setModTipAnio('setModTipAnio');
+			 	$bienes->setColor('setColor');
+			 	$bienes->setNombreMat('setNombreMat');
+
+				$direccion = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Direccion')
+				    ->find(27);
+
+				$coordinacion = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Coordinacion')
+				    ->find(27);
+
+				$responble = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Reponsable')
+				    ->find(1);
+
+				$movimientos = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Movimientos')
+				    ->find(3);
+
+				$municipio = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Municipio')
+				    ->find(23);
+
+				$estado = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Estado')
+				    ->find(25);
+
+				$tipos_bienes = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:TiposBienes')
+				    ->find(1);
+
+				$seguros = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Seguros')
+				    ->find(1);
+
+				$resumen_cuentas = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:ResumenCuentas')
+				    ->find(6);
+
+				$faltantes = $this->getDoctrine()
+				    ->getRepository('ProyectoPrincipalBundle:Faltantes')
+				    ->find(16);
+
+
+			 	$bienes->setIdMuni($municipio);
+				$bienes->setIdEstd($estado);
+			 	$bienes->setIdTbien($tipos_bienes);
+				$bienes->setIdSeg($seguros);
+				$bienes->setIdRcta($resumen_cuentas);
+				$bienes->setIdFalt($faltantes);
+				$bienes->setIdDirc($direccion);
+				$bienes->setIdRspn($responble);
+				$bienes->setIdCord($coordinacion);
+				$bienes->setIdMvts($movimientos);
+
+			 	$em->persist($bienes);
+				$em->flush();
+
 			default:
-				// 
+				echo "No entro a ninguna opcion del case";
 				break;
 		}
 

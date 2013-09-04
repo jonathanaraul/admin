@@ -71,9 +71,12 @@ class Movimientos
     private $cantidad;
 
     /**
-     * @var integer
+     * @var \Reponsable
      *
-     * @ORM\Column(name="id_rspn", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Reponsable")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_rspn", referencedColumnName="id")
+     * })
      */
     private $idRspn;
 

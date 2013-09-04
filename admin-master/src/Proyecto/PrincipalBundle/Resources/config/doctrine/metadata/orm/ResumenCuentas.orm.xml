@@ -4,6 +4,7 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="nombRcuentas" type="string" column="nomb_rcuentas" length="30" nullable="false"/>
     <many-to-one field="idMuni" target-entity="Municipio">
       <join-columns>
         <join-column name="id_muni" referenced-column-name="id"/>

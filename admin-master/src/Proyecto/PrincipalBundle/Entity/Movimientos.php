@@ -71,9 +71,12 @@ class Movimientos
     private $cantidad;
 
     /**
-     * @var integer
+     * @var \Reponsable
      *
-     * @ORM\Column(name="id_rspn", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Reponsable")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_rspn", referencedColumnName="id")
+     * })
      */
     private $idRspn;
 
@@ -293,10 +296,10 @@ class Movimientos
     /**
      * Set idRspn
      *
-     * @param integer $idRspn
+     * @param \Proyecto\PrincipalBundle\Entity\Reponsable $idRspn
      * @return Movimientos
      */
-    public function setIdRspn($idRspn)
+    public function setIdRspn(\Proyecto\PrincipalBundle\Entity\Reponsable $idRspn = null)
     {
         $this->idRspn = $idRspn;
     
@@ -306,7 +309,7 @@ class Movimientos
     /**
      * Get idRspn
      *
-     * @return integer 
+     * @return \Proyecto\PrincipalBundle\Entity\Reponsable 
      */
     public function getIdRspn()
     {

@@ -22,6 +22,13 @@ class ResumenCuentas
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="nomb_rcuentas", type="string", length=30, nullable=false)
+     */
+    private $nombRcuentas;
+
+    /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
@@ -51,6 +58,29 @@ class ResumenCuentas
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set nombRcuentas
+     *
+     * @param string $nombRcuentas
+     * @return ResumenCuentas
+     */
+    public function setNombRcuentas($nombRcuentas)
+    {
+        $this->nombRcuentas = $nombRcuentas;
+    
+        return $this;
+    }
+
+    /**
+     * Get nombRcuentas
+     *
+     * @return string 
+     */
+    public function getNombRcuentas()
+    {
+        return $this->nombRcuentas;
     }
 
     /**

@@ -10,7 +10,8 @@
 		Vigencia desde:   <input type='text' id='vig_desde_seguro'> <br>
 		Vigencia hasta:   <input type='text' id='vig_hasta_seguro'> <br>
 		Codigo de Seguro: <input type='text' id='codigo_seguro'>    <br>
-						  <input type='hidden' id='input_seguros_guardar' value='seguros'>
+			
+			<input type='hidden' id='input_seguros_guardar' value='seguros'>
 
 		<input class ='boton_enviar_guardar_seguros' type='button' value='Enviar'>
 	</form>
@@ -22,7 +23,8 @@
 		Nombre de direccion:<input type='text' id='nombre_direccion'><br>
 		Nombre de Director(a):<input type='text' id='nombre_director'><br>
 		Codigo de Direccion:<input type='text' id='codigo_direccion'><br>
-		<input type='hidden' id='input_direccion_guardar' value='direccion'>
+
+			<input type='hidden' id='input_direccion_guardar' value='direccion'>
 
 		<input class='boton_enviar_guardar_direccion' type='button' value='Enviar'>
 
@@ -35,7 +37,8 @@
 		Nombre de responsable:<input type='text' id='nombre_responsable'><br>
 		Cedula Responsable:<input type='text' id='cedula_responsable'><br>
 		Descripcion Cargo:<input type='text' id='descripcion_cargo_responsable'><br>
-						   <input type='hidden' id='input_responsable_guardar' value='responsable'>
+			
+			<input type='hidden' id='input_responsable_guardar' value='responsable'>
 
 		<input class='boton_enviar_guardar_responsable' type='button' value='Enviar'>
 		
@@ -47,12 +50,73 @@
 		Nombre de Coordinacion:<input type='text' id='nombre_coordinacion'><br>
 		Nombre de Coordinador(a):<input type='text' id='nombre_coordinador'><br>
 		Codigo de Coordinacion:<input type='text' id='codigo_coordinacion'><br>
-						   <input type='hidden' id='input_coordinacion_guardar' value='coordinacion'>
+
+			<input type='hidden' id='input_coordinacion_guardar' value='coordinacion'>
 
 		<input class='boton_enviar_guardar_coordinacion' type='button' value='Enviar'>
 
 {% endif %}
 
+{% if slug == 'faltantes' %}
+
+		Grupo:<input type='text' id='grupo'><br>
+		Subgrupo:<input type='text' id='subgrupo'><br>
+		Seccion:<input type='text' id='seccion'><br>
+		Descripcion:<input type='text' id='descripcion'><br>
+		Cantidad:<input type='text' id='cantidad'><br>
+		Valor unidad:<input type='text' id='valor_unidad'><br>
+		Diferencia:<input type='text' id='diferencia'><br>
+		Observacion:<input type='text' id='observacion'><br>
+		Direccion:<input type='text' id='direccion'><br>
+		Coordinacion:<input type='text' id='coordinacion'><br>
+		Estado:<input type='text' id='Estado'><br>
+		Municipio:<input type='text' id='municipio'><br>
+
+			<input type='hidden' id='input_faltantes_guardar' value='faltantes'>
+
+		<input class='boton_enviar_guardar_faltantes' type='button' value='Enviar'>
+
+{% endif %}
+
+{% if slug == 'movimientos' %}
+
+		Direccion:<input type='text' id='direccion'><br>
+		Periodo:<input type='text' id='subgrupo'><br>
+		Grupo:<input type='text' id='grupo'><br>
+		Sub Grupo:<input type='text' id='subgrupo'><br>
+		Seccion:<input type='text' id='seccion'><br>
+		Concepto:<input type='text' id='concepto'><br>
+		Cantidad:<input type='text' id='cantidad'><br>
+		Responsable:<input type='text' id='responsable'><br>
+		Coordinacion:<input type='text' id='coordinacion'><br>
+		Estado:<input type='text' id='estado'><br>
+		Municipio:<input type='text' id='municipio'><br>
+
+			<input type='hidden' id='input_movimientos_guardar' value='movimientos'>
+
+		<input class='boton_enviar_guardar_movimientos' type='button' value='Enviar'>
+
+{% endif %}
+
+{% if slug == 'resumen_cuentas' %}
+
+		Nombmbre de Resumen de cuentas:<input type='text' id='nombre_rcuentas'><br>
+
+			<input type='hidden' id='input_nombre_rcuentas_guardar' value='rcuentas'>
+
+		<input class='boton_enviar_guardar_nombre_rcuentas' type='button' value='Enviar'>
+
+{% endif %}
+
+{% if slug == 'bienes' %}
+
+		Nombmbre de Resumen de cuentas:<input type='text' id='nombre_rcuentas'><br>
+
+			<input type='hidden' id='input_nombre_rcuentas_bienes' value='bienes'>
+
+		<input class='boton_enviar_guardar_nombre_bienes' type='button' value='Enviar'>
+
+{% endif %}
 	<a href="{{ path('portada') }}">Volver</a>
 
 {%endblock%}

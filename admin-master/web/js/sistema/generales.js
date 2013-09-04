@@ -34,7 +34,6 @@ $(".boton_enviar_guardar_seguros").live("click", function() {
 	 	
 		}
 	});
-
 }
 
 });
@@ -94,7 +93,6 @@ $('.boton_enviar_guardar_direccion').live("click", function() {
 		}
 	});
 	};
-
 });
 
 $('.boton_enviar_guardar_coordinacion').live("click", function() {
@@ -120,7 +118,69 @@ $('.boton_enviar_guardar_coordinacion').live("click", function() {
 	 	
 		}
 		});
-
 	};
+});
 
+$(".boton_enviar_guardar_faltantes").live("click", function() {
+
+	if ($('#input_faltantes_guardar')) {
+
+		var modulo = 'faltantes';
+
+		data = 'modulo='+modulo;
+
+		$.ajax({
+		type : "POST",
+		url : guardar,
+		data : data,
+		dataType : "json",
+		success : function(data) {
+		
+			// console.log(data.variable);
+	 	
+		}
+		});
+	};
+});
+
+$('.boton_enviar_guardar_movimientos').live("click", function() {
+
+	if ($('#input_input_movimientos_guardar_guardar')) {
+
+		var modulo = 'movimientos';
+		data = 'modulo='+modulo;
+
+		$.ajax({
+		type : "POST",
+		url : guardar,
+		data : data,
+		dataType : "json",
+		success : function(data) {
+		
+			// console.log(data.variable);
+	 	
+		}
+		});
+	};	
+});
+
+$('.boton_enviar_guardar_nombre_rcuentas').live("click", function() {
+
+	if ($('#input_nombre_rcuentas_guardar')) {
+
+		var modulo = 'resumen_cuentas';
+		data = 'modulo='+modulo;
+		
+		$.ajax({
+		type : "POST",
+		url : guardar,
+		data : data,
+		dataType : "json",
+		success : function(data) {
+		
+			// console.log(data.variable);
+	 	
+		}
+		});
+	};	
 });
