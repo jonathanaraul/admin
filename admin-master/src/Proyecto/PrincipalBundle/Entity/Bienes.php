@@ -274,16 +274,6 @@ class Bienes
     private $nombreMat;
 
     /**
-     * @var \Seguros
-     *
-     * @ORM\ManyToOne(targetEntity="Seguros")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_seg", referencedColumnName="id")
-     * })
-     */
-    private $idSeg;
-
-    /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
@@ -352,6 +342,16 @@ class Bienes
      * })
      */
     private $idTbien;
+
+    /**
+     * @var \Seguros
+     *
+     * @ORM\ManyToOne(targetEntity="Seguros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_seg", referencedColumnName="id")
+     * })
+     */
+    private $idSeg;
 
     /**
      * @var \ResumenCuentas
@@ -1214,29 +1214,6 @@ class Bienes
     }
 
     /**
-     * Set idSeg
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Seguros $idSeg
-     * @return Bienes
-     */
-    public function setIdSeg(\Proyecto\PrincipalBundle\Entity\Seguros $idSeg = null)
-    {
-        $this->idSeg = $idSeg;
-    
-        return $this;
-    }
-
-    /**
-     * Get idSeg
-     *
-     * @return \Proyecto\PrincipalBundle\Entity\Seguros 
-     */
-    public function getIdSeg()
-    {
-        return $this->idSeg;
-    }
-
-    /**
      * Set idDirc
      *
      * @param \Proyecto\PrincipalBundle\Entity\Direccion $idDirc
@@ -1395,6 +1372,29 @@ class Bienes
     public function getIdTbien()
     {
         return $this->idTbien;
+    }
+
+    /**
+     * Set idSeg
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Seguros $idSeg
+     * @return Bienes
+     */
+    public function setIdSeg(\Proyecto\PrincipalBundle\Entity\Seguros $idSeg = null)
+    {
+        $this->idSeg = $idSeg;
+    
+        return $this;
+    }
+
+    /**
+     * Get idSeg
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Seguros 
+     */
+    public function getIdSeg()
+    {
+        return $this->idSeg;
     }
 
     /**

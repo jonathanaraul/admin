@@ -40,14 +40,14 @@
     <field name="modTipAnio" type="string" column="mod_tip_anio" length="255" nullable="true"/>
     <field name="color" type="string" column="color" length="255" nullable="true"/>
     <field name="nombreMat" type="string" column="nombre_mat" length="255" nullable="true"/>
-    <many-to-one field="idEstd" target-entity="Estado">
-      <join-columns>
-        <join-column name="id_estd" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="idTbien" target-entity="TiposBienes">
       <join-columns>
         <join-column name="id_tbien" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idSeg" target-entity="Seguros">
+      <join-columns>
+        <join-column name="id_seg" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
     <many-to-one field="idRcta" target-entity="ResumenCuentas">
@@ -60,19 +60,14 @@
         <join-column name="id_falt" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
+    <many-to-one field="idEstd" target-entity="Estado">
+      <join-columns>
+        <join-column name="id_estd" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
     <many-to-one field="idMuni" target-entity="Municipio">
       <join-columns>
         <join-column name="id_muni" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="idMvts" target-entity="Movimientos">
-      <join-columns>
-        <join-column name="id_mvts" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="idDirc" target-entity="Direccion">
-      <join-columns>
-        <join-column name="id_dirc" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
     <many-to-one field="idCord" target-entity="Coordinacion">
@@ -85,9 +80,14 @@
         <join-column name="id_rspn" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="idSeg" target-entity="Seguros">
+    <many-to-one field="idMvts" target-entity="Movimientos">
       <join-columns>
-        <join-column name="id_seg" referenced-column-name="id"/>
+        <join-column name="id_mvts" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idDirc" target-entity="Direccion">
+      <join-columns>
+        <join-column name="id_dirc" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

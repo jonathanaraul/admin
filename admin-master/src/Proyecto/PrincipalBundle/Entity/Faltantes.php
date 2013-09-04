@@ -78,6 +78,16 @@ class Faltantes
     private $obsrvc;
 
     /**
+     * @var \Direccion
+     *
+     * @ORM\ManyToOne(targetEntity="Direccion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
+     * })
+     */
+    private $idDirc;
+
+    /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
@@ -106,16 +116,6 @@ class Faltantes
      * })
      */
     private $idCord;
-
-    /**
-     * @var \Direccion
-     *
-     * @ORM\ManyToOne(targetEntity="Direccion")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
-     * })
-     */
-    private $idDirc;
 
 
 
@@ -314,6 +314,29 @@ class Faltantes
     }
 
     /**
+     * Set idDirc
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Direccion $idDirc
+     * @return Faltantes
+     */
+    public function setIdDirc(\Proyecto\PrincipalBundle\Entity\Direccion $idDirc = null)
+    {
+        $this->idDirc = $idDirc;
+    
+        return $this;
+    }
+
+    /**
+     * Get idDirc
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Direccion 
+     */
+    public function getIdDirc()
+    {
+        return $this->idDirc;
+    }
+
+    /**
      * Set idMuni
      *
      * @param \Proyecto\PrincipalBundle\Entity\Municipio $idMuni
@@ -380,28 +403,5 @@ class Faltantes
     public function getIdCord()
     {
         return $this->idCord;
-    }
-
-    /**
-     * Set idDirc
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Direccion $idDirc
-     * @return Faltantes
-     */
-    public function setIdDirc(\Proyecto\PrincipalBundle\Entity\Direccion $idDirc = null)
-    {
-        $this->idDirc = $idDirc;
-    
-        return $this;
-    }
-
-    /**
-     * Get idDirc
-     *
-     * @return \Proyecto\PrincipalBundle\Entity\Direccion 
-     */
-    public function getIdDirc()
-    {
-        return $this->idDirc;
     }
 }

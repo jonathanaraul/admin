@@ -27,29 +27,44 @@ class PrincipalController extends Controller
 	 	
 	 	$em = $this->getDoctrine()->getManager();
 
+///////////////////////////////////
+	    $municipio = $this->getDoctrine()
+	        ->getRepository('ProyectoPrincipalBundle:Municipio')
+	        ->find(23);
+	    // $variableMunicipio = $municipio->getId();
 
-		$municipio = new Municipio();
-	 	$municipio->setNombre('Nombremunicipio');
+/////////////////////////////////
+	    $estado = $this->getDoctrine()
+	        ->getRepository('ProyectoPrincipalBundle:Estado')
+	        ->find(25);
+	    // $variableEstado = $estado->getId();
+/////////////////////////////
+	    $coordinacion = $this->getDoctrine()
+	        ->getRepository('ProyectoPrincipalBundle:Coordinacion')
+	        ->find(28);
+	    // $variableCoordinacion = $coordinacion->getId();
+/////////////////////////
+	    $direccion = $this->getDoctrine()
+	        ->getRepository('ProyectoPrincipalBundle:Direccion')
+	        ->find(27);
+	    // $variableDireccion = $direccion->getId();
+//////////////////////
 
-	 	$estado = new Estado();
-	 	$municipio->setNombre('Nombreestado');
+		// $municipio = new Municipio();
+		// $municipio->setNombre('Nombremunicipio');
 
-	 	$coordinacion = new Coordinacion();
-	 	$coordinacion->setCoordinador('nombrecordinador');
+	 	// $estado = new Estado();
+	 	// $estado->setNombre('nombre estado');
 
-	 	$direccion = new Direccion();
-	 	$direccion->setDirector('nombredirector');
-	 	$direccion->setNombre('Nomre');
-	 	
-	 		 
-	 	$em->persist($municipio);
-	 	$em->persist($estado);
-	 	$em->persist($coordinacion);
-	 	$em->persist($direccion);
-		
-		$em->flush();
+	 	// $coordinacion = new Coordinacion();
+	 	// $coordinacion->setCoordinador('nombrecordinador');
+
+	 	// $direccion = new Direccion();
+	 	// $direccion->setDirector('nombredirector');
+	 	// $direccion->setNombre('Nomre');
 
 	 	$faltantes = new Faltantes();
+
 	 	$faltantes->setGrupo('Grupo de prueba');
 	 	$faltantes->setSubgrupo('Sub grupo de prueba');
 	 	$faltantes->setSeccion('Seccion de prueba');
@@ -80,11 +95,6 @@ class PrincipalController extends Controller
 	 	$movimientos->setObsrvc('Observacion de prueba');
 	 	$movimientos->setCodFalt(2233);
 		*/
-
-
-	 	$em->flush();
-
-
 
 	 	return $this->render('ProyectoPrincipalBundle:Principal:portada.html.twig', array());
 	 }

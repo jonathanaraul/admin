@@ -12,11 +12,6 @@
     <field name="valorUni" type="integer" column="valor_uni" nullable="false"/>
     <field name="diferencia" type="integer" column="diferencia" nullable="false"/>
     <field name="obsrvc" type="string" column="obsrvc" length="255" nullable="false"/>
-    <many-to-one field="idDirc" target-entity="Direccion">
-      <join-columns>
-        <join-column name="id_dirc" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="idCord" target-entity="Coordinacion">
       <join-columns>
         <join-column name="id_cord" referenced-column-name="id"/>
@@ -30,6 +25,11 @@
     <many-to-one field="idMuni" target-entity="Municipio">
       <join-columns>
         <join-column name="id_muni" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idDirc" target-entity="Direccion">
+      <join-columns>
+        <join-column name="id_dirc" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

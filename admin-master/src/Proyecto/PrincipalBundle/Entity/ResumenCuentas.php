@@ -22,16 +22,6 @@ class ResumenCuentas
     private $id;
 
     /**
-     * @var \Municipio
-     *
-     * @ORM\ManyToOne(targetEntity="Municipio")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
-     * })
-     */
-    private $idMuni;
-
-    /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
@@ -40,6 +30,16 @@ class ResumenCuentas
      * })
      */
     private $idEstd;
+
+    /**
+     * @var \Municipio
+     *
+     * @ORM\ManyToOne(targetEntity="Municipio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
+     * })
+     */
+    private $idMuni;
 
 
 
@@ -51,29 +51,6 @@ class ResumenCuentas
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idMuni
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Municipio $idMuni
-     * @return ResumenCuentas
-     */
-    public function setIdMuni(\Proyecto\PrincipalBundle\Entity\Municipio $idMuni = null)
-    {
-        $this->idMuni = $idMuni;
-    
-        return $this;
-    }
-
-    /**
-     * Get idMuni
-     *
-     * @return \Proyecto\PrincipalBundle\Entity\Municipio 
-     */
-    public function getIdMuni()
-    {
-        return $this->idMuni;
     }
 
     /**
@@ -97,5 +74,28 @@ class ResumenCuentas
     public function getIdEstd()
     {
         return $this->idEstd;
+    }
+
+    /**
+     * Set idMuni
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Municipio $idMuni
+     * @return ResumenCuentas
+     */
+    public function setIdMuni(\Proyecto\PrincipalBundle\Entity\Municipio $idMuni = null)
+    {
+        $this->idMuni = $idMuni;
+    
+        return $this;
+    }
+
+    /**
+     * Get idMuni
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Municipio 
+     */
+    public function getIdMuni()
+    {
+        return $this->idMuni;
     }
 }

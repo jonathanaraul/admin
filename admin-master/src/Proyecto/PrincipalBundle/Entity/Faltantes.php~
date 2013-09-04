@@ -78,6 +78,16 @@ class Faltantes
     private $obsrvc;
 
     /**
+     * @var \Direccion
+     *
+     * @ORM\ManyToOne(targetEntity="Direccion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
+     * })
+     */
+    private $idDirc;
+
+    /**
      * @var \Municipio
      *
      * @ORM\ManyToOne(targetEntity="Municipio")
@@ -106,16 +116,6 @@ class Faltantes
      * })
      */
     private $idCord;
-
-    /**
-     * @var \Direccion
-     *
-     * @ORM\ManyToOne(targetEntity="Direccion")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_dirc", referencedColumnName="id")
-     * })
-     */
-    private $idDirc;
 
 
 }

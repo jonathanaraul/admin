@@ -22,16 +22,6 @@ class ResumenCuentas
     private $id;
 
     /**
-     * @var \Municipio
-     *
-     * @ORM\ManyToOne(targetEntity="Municipio")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
-     * })
-     */
-    private $idMuni;
-
-    /**
      * @var \Estado
      *
      * @ORM\ManyToOne(targetEntity="Estado")
@@ -40,6 +30,16 @@ class ResumenCuentas
      * })
      */
     private $idEstd;
+
+    /**
+     * @var \Municipio
+     *
+     * @ORM\ManyToOne(targetEntity="Municipio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_muni", referencedColumnName="id")
+     * })
+     */
+    private $idMuni;
 
 
 }

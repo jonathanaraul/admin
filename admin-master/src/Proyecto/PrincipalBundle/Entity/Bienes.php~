@@ -274,16 +274,6 @@ class Bienes
     private $nombreMat;
 
     /**
-     * @var \Seguros
-     *
-     * @ORM\ManyToOne(targetEntity="Seguros")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_seg", referencedColumnName="id")
-     * })
-     */
-    private $idSeg;
-
-    /**
      * @var \Direccion
      *
      * @ORM\ManyToOne(targetEntity="Direccion")
@@ -352,6 +342,16 @@ class Bienes
      * })
      */
     private $idTbien;
+
+    /**
+     * @var \Seguros
+     *
+     * @ORM\ManyToOne(targetEntity="Seguros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_seg", referencedColumnName="id")
+     * })
+     */
+    private $idSeg;
 
     /**
      * @var \ResumenCuentas
