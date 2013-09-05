@@ -50,10 +50,11 @@ class PrincipalController extends Controller
 
 		switch ($modulo) {
 			case 'seguros':
-				
+
 				$seguros = new Seguros();
 
 		///////////////////Captura de variables
+
 
 				$nombre_seguro    = $post -> get("nombre_seguro");
 				$poliza_seguro    = $post -> get("poliza_seguro");
@@ -68,7 +69,7 @@ class PrincipalController extends Controller
 				$seguros->setPoliza($poliza_seguro);
 				$seguros->setVigDesde(new \DateTime());
 				$seguros->setVigHasta(new \DateTime('11-11-1990'));
-				$seguros->setCodSeg($codigo_seguro);
+				
 
 				
 			    $em->persist($seguros);

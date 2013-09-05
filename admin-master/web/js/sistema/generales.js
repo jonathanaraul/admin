@@ -7,7 +7,6 @@ $(".boton_enviar_guardar_seguros").live("click", function() {
 
 	if ( $('#input_seguros_guardar') ) 
 	{
-
 		////////////////////Captura de vaiables
 
 		var modulo = 'seguros';
