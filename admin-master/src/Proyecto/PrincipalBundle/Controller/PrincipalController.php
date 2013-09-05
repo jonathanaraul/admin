@@ -60,7 +60,8 @@ class PrincipalController extends Controller
 			case 'resumen_cuentas':
 				// $repositorio_resumen_cuentas = $this->getDoctrine()->getRepository('ProyectoPrincipalBundle:ResumenCuentas');
 				// $todos_los_resumen_cuentas = $repositorio_resumen_cuentas->findAll();
-				// $todos_los_resumen_cuentas = $todos_los_resumen_cuentas->getNombRcuentas();
+				// $todos_los_resumen_
+			// $cuentas = $todos_los_resumen_cuentas->getEstado();
 
 
 				set_time_limit(0);
