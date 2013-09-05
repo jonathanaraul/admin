@@ -63,11 +63,12 @@ class PrincipalController extends Controller
 				// $todos_los_resumen_cuentas = $todos_los_resumen_cuentas->getNombRcuentas();
 
 
-
+				set_time_limit(0);
 				$repositorio_resumen_cuentas = $this->getDoctrine()
         			->getRepository('ProyectoPrincipalBundle:ResumenCuentas')
-        			->find(4);
+        			->findOneById(4);
 
+        			print_r($repositorio_resumen_cuentas); exit;
 // NOTA::::: Deseo recuperar los campos de la tabla Estado, exactamente los nombres de los estados,
    // en este caso probe con el id 4, sin invocar los el metodo getNombre() AUN
 
