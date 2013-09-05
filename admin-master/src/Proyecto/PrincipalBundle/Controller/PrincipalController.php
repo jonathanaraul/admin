@@ -69,11 +69,12 @@ class PrincipalController extends Controller
         			->getRepository('ProyectoPrincipalBundle:ResumenCuentas')
         			->findOneById(4);
 
-        			print_r($repositorio_resumen_cuentas); exit;
+        			//print_r($repositorio_resumen_cuentas); exit;
 // NOTA::::: Deseo recuperar los campos de la tabla Estado, exactamente los nombres de los estados,
    // en este caso probe con el id 4, sin invocar los el metodo getNombre() AUN
 
-        		$estado = $repositorio_resumen_cuentas->getEstado();
+        		echo'El nombre del estado es '. $repositorio_resumen_cuentas->getIdEstd()->getNombre();
+        		exit;// It's easy
 
         		var_dump($repositorio_resumen_cuentas);
         		exit();
