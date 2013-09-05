@@ -7,3 +7,6 @@ guardar:
 guardarAjax:
     pattern:  /guardarAjax/
     defaults: { _controller: ProyectoPrincipalBundle:Principal:guardarAjax }
+listar:
+    pattern:  /listar/{slug}
+    defaults: { _controller: ProyectoPrincipalBundle:Principal:listar, slug:'' }

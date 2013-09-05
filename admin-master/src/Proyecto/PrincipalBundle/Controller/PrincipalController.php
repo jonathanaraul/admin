@@ -355,6 +355,7 @@ class PrincipalController extends Controller
 			 	$em->persist($bienes);
 				$em->flush();
 
+				break;
 			default:
 				echo "No entro a ninguna opcion del case";
 				break;
@@ -363,6 +364,12 @@ class PrincipalController extends Controller
 		$respuesta = new response(json_encode(array()));
 	    $respuesta -> headers -> set('content_type', 'aplication/json');
 		return $respuesta;
+	 }
+
+	public function listarAction($slug){
+
+		
+	 	return $this->render('ProyectoPrincipalBundle:Principal:listar.html.twig', array('slug' => $slug));
 	 }
 }
 

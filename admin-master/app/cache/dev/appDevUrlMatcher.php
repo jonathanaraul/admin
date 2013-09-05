@@ -232,6 +232,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // listar
+        if (0 === strpos($pathinfo, '/listar') && preg_match('#^/listar(?:/(?P<slug>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'listar')), array (  '_controller' => 'Proyecto\\PrincipalBundle\\Controller\\PrincipalController::listarAction',  'slug' => '',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

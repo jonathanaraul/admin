@@ -43,6 +43,7 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'portada' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Proyecto\\PrincipalBundle\\Controller\\PrincipalController::portadaAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/portada/',    ),  ),  4 =>   array (  ),),
         'guardar' => array (  0 =>   array (    0 => 'slug',  ),  1 =>   array (    '_controller' => 'Proyecto\\PrincipalBundle\\Controller\\PrincipalController::guardarAction',    'slug' => '',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'slug',    ),    1 =>     array (      0 => 'text',      1 => '/guardar',    ),  ),  4 =>   array (  ),),
         'guardarAjax' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Proyecto\\PrincipalBundle\\Controller\\PrincipalController::guardarAjaxAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/guardarAjax/',    ),  ),  4 =>   array (  ),),
+        'listar' => array (  0 =>   array (    0 => 'slug',  ),  1 =>   array (    '_controller' => 'Proyecto\\PrincipalBundle\\Controller\\PrincipalController::listarAction',    'slug' => '',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'slug',    ),    1 =>     array (      0 => 'text',      1 => '/listar',    ),  ),  4 =>   array (  ),),
     );
 
     /**

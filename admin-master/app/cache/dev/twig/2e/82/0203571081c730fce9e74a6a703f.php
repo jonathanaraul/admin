@@ -121,7 +121,10 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
         // line 66
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "seguros")), "html", null, true);
         echo "\" class ='agregar_seguros'>Aregar</a></li>
-\t\t\t\t<li><a href=\"#\">Listar</a></li>
+\t\t\t\t<li><a href=\"";
+        // line 67
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("listar", array("slug" => "seguros")), "html", null, true);
+        echo "\" class ='listar_seguros'>Listar</a></li>
 \t\t\t</ul>
 \t</li>
 
@@ -142,6 +145,6 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  122 => 66,  112 => 59,  102 => 52,  92 => 45,  82 => 38,  72 => 31,  62 => 24,  52 => 17,  43 => 10,  40 => 9,  35 => 6,  30 => 3,);
+        return array (  126 => 67,  122 => 66,  112 => 59,  102 => 52,  92 => 45,  82 => 38,  72 => 31,  62 => 24,  52 => 17,  43 => 10,  40 => 9,  35 => 6,  30 => 3,);
     }
 }
