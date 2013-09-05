@@ -19,17 +19,17 @@
 			</ul>
 	</li>	 
 	<li>
-		Coordinación
+		<p>Coordinación</p>
 			<ul>
 				<li><a href="{{ path('guardar', {'slug': 'coordinacion'}) }}" class ='agregar_coordinacion'>Aregar</a></li>
-				<li>Listar</li>
+				<li><a href="{{ path('listar', {'slug': 'coordinacion'}) }}" class ='listar_coordinacion'>Listar</a></li>
 			</ul>
 	</li>
 	<li>
 		Dirección
 			<ul>
 				<li><a href="{{ path('guardar', {'slug': 'direccion'}) }}" class ='agregar_direccion'>Aregar</a></li>
-				<li>Listar</li>
+				<li><a href="{{ path('listar', {'slug': 'direccion'}) }}" class ='listar_direccion'>Listar</a></li>
 			</ul>
 	</li>
 	<li>
@@ -54,10 +54,10 @@
 			</ul>
 	</li>
 	<li>
-		Resumen de cuentas
+		<p>Resumen de cuentas</p>
 			<ul>
 				<li><a href="{{ path('guardar', {'slug': 'resumen_cuentas'}) }}" class ='agregar_resumen_cuentas'>Aregar</a></li>
-				<li>Listar</li>
+				<li><a href="{{ path('listar', {'slug': 'resumen_cuentas'}) }}" class ='listar_resumen_cuentas'>Listar</a></li>
 			</ul>
 	</li>
 	<li>
@@ -67,7 +67,5 @@
 				<li><a href="{{ path('listar', {'slug': 'seguros'}) }}" class ='listar_seguros'>Listar</a></li>
 			</ul>
 	</li>
-
-
 </ul> 
 {%endblock%} 

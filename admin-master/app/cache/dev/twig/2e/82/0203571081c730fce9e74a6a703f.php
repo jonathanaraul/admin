@@ -55,13 +55,16 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 \t\t\t</ul>
 \t</li>\t 
 \t<li>
-\t\tCoordinación
+\t\t<p>Coordinación</p>
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"";
         // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "coordinacion")), "html", null, true);
         echo "\" class ='agregar_coordinacion'>Aregar</a></li>
-\t\t\t\t<li>Listar</li>
+\t\t\t\t<li><a href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("listar", array("slug" => "coordinacion")), "html", null, true);
+        echo "\" class ='listar_coordinacion'>Listar</a></li>
 \t\t\t</ul>
 \t</li>
 \t<li>
@@ -71,7 +74,10 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
         // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "direccion")), "html", null, true);
         echo "\" class ='agregar_direccion'>Aregar</a></li>
-\t\t\t\t<li>Listar</li>
+\t\t\t\t<li><a href=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("listar", array("slug" => "direccion")), "html", null, true);
+        echo "\" class ='listar_direccion'>Listar</a></li>
 \t\t\t</ul>
 \t</li>
 \t<li>
@@ -105,13 +111,16 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 \t\t\t</ul>
 \t</li>
 \t<li>
-\t\tResumen de cuentas
+\t\t<p>Resumen de cuentas</p>
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"";
         // line 59
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("guardar", array("slug" => "resumen_cuentas")), "html", null, true);
         echo "\" class ='agregar_resumen_cuentas'>Aregar</a></li>
-\t\t\t\t<li>Listar</li>
+\t\t\t\t<li><a href=\"";
+        // line 60
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("listar", array("slug" => "resumen_cuentas")), "html", null, true);
+        echo "\" class ='listar_resumen_cuentas'>Listar</a></li>
 \t\t\t</ul>
 \t</li>
 \t<li>
@@ -127,8 +136,6 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
         echo "\" class ='listar_seguros'>Listar</a></li>
 \t\t\t</ul>
 \t</li>
-
-
 </ul> 
 ";
     }
@@ -145,6 +152,6 @@ class __TwigTemplate_2e820203571081c730fce9e74a6a703f extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  126 => 67,  122 => 66,  112 => 59,  102 => 52,  92 => 45,  82 => 38,  72 => 31,  62 => 24,  52 => 17,  43 => 10,  40 => 9,  35 => 6,  30 => 3,);
+        return array (  135 => 67,  131 => 66,  122 => 60,  118 => 59,  108 => 52,  98 => 45,  88 => 38,  79 => 32,  75 => 31,  66 => 25,  62 => 24,  52 => 17,  43 => 10,  40 => 9,  35 => 6,  30 => 3,);
     }
 }

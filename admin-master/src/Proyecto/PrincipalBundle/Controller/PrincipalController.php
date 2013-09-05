@@ -33,6 +33,57 @@ class PrincipalController extends Controller
 	 	return $this->render('ProyectoPrincipalBundle:Principal:portada.html.twig', array());
 	 }
 
+	public function listarAction($slug){
+
+		switch ($slug) {
+			case 'seguros':
+				$repositorio_seguros = $this->getDoctrine()->getRepository('ProyectoPrincipalBundle:Seguros');
+				$todos_los_seguros = $repositorio_seguros->findAll();
+
+				$listado = $todos_los_seguros;
+				break;
+
+			case 'coordinacion':
+				$repositorio_coordinacion = $this->getDoctrine()->getRepository('ProyectoPrincipalBundle:Coordinacion');
+				$todos_las_coordinaciones = $repositorio_coordinacion->findAll();
+
+				$listado = $todos_las_coordinaciones;
+				break;
+
+			case 'direccion':
+				$repositorio_direccion = $this->getDoctrine()->getRepository('ProyectoPrincipalBundle:Direccion');
+				$todos_las_direcciones = $repositorio_direccion->findAll();
+
+				$listado = $todos_las_direcciones;
+				break;
+
+			case 'resumen_cuentas':
+				// $repositorio_resumen_cuentas = $this->getDoctrine()->getRepository('ProyectoPrincipalBundle:ResumenCuentas');
+				// $todos_los_resumen_cuentas = $repositorio_resumen_cuentas->findAll();
+				// $todos_los_resumen_cuentas = $todos_los_resumen_cuentas->getNombRcuentas();
+
+
+
+				$repositorio_resumen_cuentas = $this->getDoctrine()
+        			->getRepository('ProyectoPrincipalBundle:ResumenCuentas')
+        			->find(4);
+
+        		$estado = $repositorio_resumen_cuentas->getEstado();
+
+        		var_dump($repositorio_resumen_cuentas);
+        		exit();
+				$listado = $todos_los_resumen_cuentas;
+				break;
+
+			default:
+				echo "no agarra la variable slug, pasa algo!!!";
+				exit();
+				break;
+		}
+
+	 	return $this->render('ProyectoPrincipalBundle:Principal:listar.html.twig', array('slug' => $slug, 'listado' => $listado));
+	 }
+
 	 public function guardarAction($slug){
 
 	 	return $this->render('ProyectoPrincipalBundle:Principal:guardar.html.twig', array('slug' => $slug ));
@@ -366,10 +417,6 @@ class PrincipalController extends Controller
 		return $respuesta;
 	 }
 
-	public function listarAction($slug){
 
-		
-	 	return $this->render('ProyectoPrincipalBundle:Principal:listar.html.twig', array('slug' => $slug));
-	 }
 }
 

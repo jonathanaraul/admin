@@ -2,12 +2,115 @@
 
 {%block contenido%}
 
-	{% if slug == 'seguros'%}
-
-		<h1>listado de seguros!!!</h1>
-
+	{% if slug == 'seguros' %}
+		<table border = '1'>
+						<thead>
+							<tr>
+								<td>
+									<p>Nombre</p>
+								</td>
+								<td>
+									<p>Poliza</p>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+			{% for listar in listado %}
+						<tr>
+							<td>
+								{{listar.nombre}}
+							</td>
+							<td>
+								{{listar.poliza}}
+							</td>
+						</tr>
+			{% endfor %}
+					</tbody>
+		</table>
 	{% endif %}
 
+	{% if slug == 'coordinacion' %}
+		<table border = '1'>
+						<thead>
+							<tr>
+								<td>
+									<p>Nombre</p>
+								</td>
+								<td>
+									<p>Coordinador</p>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+			{% for listar in listado %}
+						<tr>
+							<td>
+								{{listar.nombre}}
+							</td>
+							<td>
+								{{listar.coordinador}}
+							</td>
+						</tr>
+			{% endfor %}
+					</tbody>
+		</table>
+	{% endif %}
+
+	{% if slug == 'direccion' %}
+		<table border = '1'>
+						<thead>
+							<tr>
+								<td>
+									<p>Nombre</p>
+								</td>
+								<td>
+									<p>Director</p>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+			{% for listar in listado %}
+						<tr>
+							<td>
+								{{listar.nombre}}
+							</td>
+							<td>
+								{{listar.director}}
+							</td>
+						</tr>
+			{% endfor %}
+					</tbody>
+		</table>
+	{% endif %}
+
+	{% if slug == 'resumen_cuentas' %}
+		<table border = '1'>
+						<thead>
+							<tr>
+								<td>
+									<p>Nombre Resumen de cuentas</p>
+								</td>
+								<td>
+									<p>Estado</p>
+								</td>
+								<td>
+									<p>Municipio</p>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+			{% for listar in listado %}
+						<tr>
+							<td>
+								{{listar.nombRcuentas}}
+							</td>
+
+						</tr>
+			{% endfor %}
+					</tbody>
+		</table>
+	{% endif %}
+	<a href="{{ path('portada') }}">Volver</a>
 {% endblock %}
 
 {%block scripts%}
